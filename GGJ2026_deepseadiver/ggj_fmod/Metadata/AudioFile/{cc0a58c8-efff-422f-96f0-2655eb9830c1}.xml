@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cc0a58c8-efff-422f-96f0-2655eb9830c1}">
+		<property name="assetPath">
+			<value>479304-Deep_Breath_04.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.2889062500000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eeb49640-a1d1-4bbb-8e6d-3e22f8887475}</destination>
+		</relationship>
+	</object>
+</objects>

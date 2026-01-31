@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{2b8e3215-1007-496f-b94d-0b5dd10758d9}">
+		<property name="name">
+			<value>Cage Effects</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0208946b-cd52-4d21-a8a0-5e1d655afd00}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6c5e81a8-5195-4266-ba2c-07c35af98e20}">
+		<property name="assetPath">
+			<value>254345-Metal-Hit-Hammer-5_Pound-Sheet_Metal-20_Gauge-Medium-Burst-Sweetener-Schoeps-Processed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.40533333333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eeb49640-a1d1-4bbb-8e6d-3e22f8887475}</destination>
+		</relationship>
+	</object>
+</objects>

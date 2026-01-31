@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bc380296-4a40-4e10-b8d9-5ae72f741483}">
+		<property name="assetPath">
+			<value>385506-BOTTLE_BLOW-EBD0F622.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>32.490791666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eeb49640-a1d1-4bbb-8e6d-3e22f8887475}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3e3cf7b7-2d8d-473f-a282-c3c6353a9a7b}">
+		<property name="assetPath">
+			<value>305219-SSL-16-20_AMB_EXT_DAY_PACIFIC_OCEAN_CARMEL_BY_THE_SEA_STRONG_WAVES_FAR_AWAY_GENERAL_VIEW_OF_CARMEL_BEACH_WITH_FAR_CRO.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>172.03200000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eeb49640-a1d1-4bbb-8e6d-3e22f8887475}</destination>
+		</relationship>
+	</object>
+</objects>

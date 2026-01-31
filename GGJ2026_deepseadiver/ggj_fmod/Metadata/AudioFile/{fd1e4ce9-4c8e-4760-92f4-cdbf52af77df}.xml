@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fd1e4ce9-4c8e-4760-92f4-cdbf52af77df}">
+		<property name="assetPath">
+			<value>1246510.audio-WATRSplsh-Water_Splash_Person_Jumping_Into_Water_Big_Impact_Take_2_Mono-SSLAB-SOUNDSNAP-04A6.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>6.2948437500000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eeb49640-a1d1-4bbb-8e6d-3e22f8887475}</destination>
+		</relationship>
+	</object>
+</objects>
