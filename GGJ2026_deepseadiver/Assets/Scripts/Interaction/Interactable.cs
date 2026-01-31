@@ -28,4 +28,10 @@ public class Interactable : MonoBehaviour
     {
         interactEvent.Invoke();
     }
+
+
+    public void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
 }
