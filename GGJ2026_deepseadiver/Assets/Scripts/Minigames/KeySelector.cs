@@ -11,7 +11,7 @@ public class KeySelector : MonoBehaviour
     [SerializeField] public GameObject imageRef;
     string c;
     int score = 0;
-    int maxScore = 5;
+    int maxScore = 3;
 
     public float targetTime = 2.0f;
     private bool isListenerRegistered = false;
@@ -58,6 +58,9 @@ public class KeySelector : MonoBehaviour
         charToSprite.Add('X', spriteX);
         charToSprite.Add('Y', spriteY);
         charToSprite.Add('Z', spriteZ);
+        
+        // Hide the image initially
+        imageRef.GetComponent<Image>().enabled = false;
   
         StartCoroutine(ShowSequence());
     }
@@ -87,6 +90,8 @@ public class KeySelector : MonoBehaviour
     IEnumerator ShowSequence()
     {
         sequenceToRepeat = "";
+        // Show image during sequence
+        imageRef.GetComponent<Image>().enabled = true;
         
         for (int round = 0; round < maxScore; round++)
         {
@@ -140,6 +145,8 @@ public class KeySelector : MonoBehaviour
                                 Debug.Log("Perfect! You completed the sequence!");
                                 score++;
                                 waitingForInput = false;
+                                targetTime = targetTime / 2;
+
                                 
                                 if (score < maxScore)
                                 {
@@ -149,6 +156,9 @@ public class KeySelector : MonoBehaviour
                                 else
                                 {
                                     Debug.Log("All rounds complete! You won!");
+                                    // Hide image when game is completed
+                                    imageRef.GetComponent<Image>().enabled = false;
+
                                 }
                             }
                         }
