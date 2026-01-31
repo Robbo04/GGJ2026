@@ -74,8 +74,12 @@ public class PlayerInteraction : MonoBehaviour
 
     void SetNewInteractable(Interactable newInteractable)
     {
-        currentInteractable = newInteractable;
-        currentInteractable.EnableOutline();
+        if (currentInteractable != newInteractable)
+        {
+            ClearCurrentInteractable();
+            currentInteractable = newInteractable;
+            currentInteractable.EnableOutline();
+        }
     }
 
     void ClearCurrentInteractable()

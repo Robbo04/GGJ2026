@@ -725,8 +725,8 @@ Transform:
   m_GameObject: {fileID: 1714792914}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.39925817, z: -0, w: 0.9168385}
-  m_LocalPosition: {x: 0.54, y: 1.9, z: 2.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.048, y: 1.9, z: 2.181}
+  m_LocalScale: {x: 0.22218, y: 0.22218, z: 0.22218}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -742,7 +742,6 @@ GameObject:
   - component: {fileID: 1839696423}
   - component: {fileID: 1839696422}
   - component: {fileID: 1839696421}
-  - component: {fileID: 1839696420}
   - component: {fileID: 1839696419}
   - component: {fileID: 1839696424}
   m_Layer: 0
@@ -777,18 +776,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1839696420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839696418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf3746bb33a164f95a933a582d900c55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!23 &1839696421
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -874,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec52f10e4c67e47b9824fe3274fde876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  reachRange: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
