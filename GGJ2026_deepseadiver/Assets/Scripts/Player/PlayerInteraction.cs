@@ -55,12 +55,19 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     SetNewInteractable(newInteractable);
                 }
-
+                else
+                {
+                    ClearCurrentInteractable();
+                }
             }
             else
             {
                 ClearCurrentInteractable();
             }
+        }
+        else
+        {
+            ClearCurrentInteractable();
         }
     }
 
@@ -78,5 +85,6 @@ public class PlayerInteraction : MonoBehaviour
             currentInteractable.DisableOutline();
             currentInteractable = null;
         }
+        
     }
 }
