@@ -6,14 +6,13 @@ using UnityEngine.InputSystem;
 public class SwitchDrag : Interactable
 {
     [Header("Lever Settings")]
+    public Transform leverRoot;          // The parent object to rotate (leave empty to use parent)
+    public CameraScript cameraScript;    // Reference to camera to lock during drag
     public float minAngle = 0f;          // Lever up position
     public float maxAngle = 45f;         // Lever down position (on)
     public float dragSensitivity = 0.5f; // How much drag affects rotation
     public float onThreshold = 40f;      // Angle at which lever is considered "on"
     
-    [Header("Events")]
-    public UnityEvent onLeverActivated;
-    public UnityEvent onLeverDeactivated;
     
     private PlayerInputActions playerControls;
     private bool isDragging = false;
@@ -24,6 +23,13 @@ public class SwitchDrag : Interactable
     new void Start()
     {
         base.Start();
+        
+        // If leverRoot not assigned, use parent object
+        if (leverRoot == null)
+        {
+            leverRoot = transform.parent;
+        }
+        
         playerControls = new PlayerInputActions();
         playerControls.PlayerController.Enable();
         playerControls.PlayerController.Look.performed += OnLook;
@@ -46,12 +52,25 @@ public class SwitchDrag : Interactable
     new public void Interact()
     {
         isDragging = true;
+        
+        // Lock camera while dragging
+        if (cameraScript != null)
+        {
+            cameraScript.enabled = false;
+        }
+        
         base.Interact(); // Call base to invoke interactEvent if needed
     }
     
     private void OnInteractCanceled(InputAction.CallbackContext context)
     {
         isDragging = false;
+        
+        // Unlock camera when done dragging
+        if (cameraScript != null)
+        {
+            cameraScript.enabled = true;
+        }
     }
     
     private void OnLook(InputAction.CallbackContext context)
@@ -69,8 +88,11 @@ public class SwitchDrag : Interactable
             currentAngle += dragAmount;
             currentAngle = Mathf.Clamp(currentAngle, minAngle, maxAngle);
             
-            // Apply rotation (assuming lever rotates on X axis)
-            transform.localRotation = Quaternion.Euler(currentAngle, 0f, 0f);
+            // Apply rotation to the lever root (parent object)
+            if (leverRoot != null)
+            {
+                leverRoot.localRotation = Quaternion.Euler(currentAngle, 0f, 0f);
+            }
             
             // Check state change
             CheckLeverState();
@@ -82,13 +104,10 @@ public class SwitchDrag : Interactable
         bool wasOn = isOn;
         isOn = currentAngle >= onThreshold;
         
-        if (isOn && !wasOn)
+        if (isOn != wasOn)
         {
-            onLeverActivated?.Invoke();
-        }
-        else if (!isOn && wasOn)
-        {
-            onLeverDeactivated?.Invoke();
+            // State changed, invoke event
+            Interact();
         }
     }
 }
