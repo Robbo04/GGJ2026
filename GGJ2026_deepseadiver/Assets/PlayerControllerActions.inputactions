@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "PlayerControllerActions",
+    "maps": [
+        {
+            "name": "PlayerController",
+            "id": "b9263d13-f718-4045-9e17-63f19c181a5d",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "5a270576-3397-42a3-95de-0a315a5e0032",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6d05eb86-b985-4d8c-a3cc-191fd33997ff",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6962e2fb-9009-4b1c-80be-efefa578d71b",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
