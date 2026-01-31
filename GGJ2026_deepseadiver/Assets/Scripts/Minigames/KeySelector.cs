@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.Sprites;
+using UnityEngine.Splines;
+using TMPro;
 
 public class KeySelector : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class KeySelector : MonoBehaviour
     string pressedString = "";
     string sequenceToRepeat = "";
     bool waitingForInput = false;
+
+    [SerializeField] public GameObject player;
+    public TextMeshProUGUI textref;
 
     public Sprite spriteA, spriteB, spriteC, spriteD, spriteE, spriteF, spriteG, spriteH, spriteI, spriteJ, 
     spriteK, spriteL, spriteM, spriteN, spriteO, spriteP, spriteQ, spriteR, spriteS, 
@@ -101,7 +105,9 @@ public class KeySelector : MonoBehaviour
             
             if (charToSprite.ContainsKey(c[0]))
             {
+                
                 imageRef.GetComponent<Image>().sprite = charToSprite[c[0]];
+                textref.text = "Count: " + (round + 1).ToString();
             }
             
             yield return new WaitForSeconds(targetTime);
@@ -158,8 +164,7 @@ public class KeySelector : MonoBehaviour
                                     Debug.Log("All rounds complete! You won!");
                                     // Hide image when game is completed
                                     imageRef.GetComponent<Image>().enabled = false;
-
-                                }
+                                    player.GetComponent<SplineAnimate>().enabled = true;                              }
                             }
                         }
                         else
