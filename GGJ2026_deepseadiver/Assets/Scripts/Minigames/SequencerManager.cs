@@ -9,7 +9,7 @@ public class SequencerManager : MonoBehaviour
     void Start()
     {
         correctButtons = 0;
-        print(buttons.Length);
+        //print(buttons.Length);
     }
 
     // Update is called once per frame

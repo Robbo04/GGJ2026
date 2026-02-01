@@ -1817,10 +1817,25 @@ PrefabInstance:
       propertyPath: QTEManager
       value: 
       objectReference: {fileID: 1941731670}
+    - target: {fileID: 5890065993911999026, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1626069174}
+    - target: {fileID: 5890065993911999026, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890065993911999026, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QTEManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1067710417069533854, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626069174}
   m_SourcePrefab: {fileID: 100100000, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
 --- !u!1001 &815770629
 PrefabInstance:
@@ -3297,6 +3312,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f8145dbb3c8a2f49a0d5a9b0157b975, type: 3}
+--- !u!1 &1626069167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1067710417069533854, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+  m_PrefabInstance: {fileID: 800189694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626069174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626069167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8c127bcc54445a196be7348b19e2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QTEManager
+  QTE: {fileID: 1941731670}
 --- !u!1001 &1666862043
 PrefabInstance:
   m_ObjectHideFlags: 0
