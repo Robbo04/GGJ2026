@@ -20,6 +20,7 @@ public class SwitchDrag : Interactable
     private float currentAngle = 0f;
     private Vector2 lookInput;
     
+    
     new void Start()
     {
         base.Start();
