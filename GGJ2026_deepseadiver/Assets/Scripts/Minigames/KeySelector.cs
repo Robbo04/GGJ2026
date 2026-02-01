@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Splines;
 using TMPro;
-using FMODUnity;
 
 public class KeySelector : MonoBehaviour
 {
@@ -22,14 +21,12 @@ public class KeySelector : MonoBehaviour
     bool waitingForInput = false;
 
     [SerializeField] public GameObject player;
-    [SerializeField] private EventReference correctSound;
-    [SerializeField] private EventReference moveCrainSound;
-
     public TextMeshProUGUI textref;
 
     public Sprite spriteA, spriteB, spriteC, spriteD, spriteE, spriteF, spriteG, spriteH, spriteI, spriteJ, 
     spriteK, spriteL, spriteM, spriteN, spriteO, spriteP, spriteQ, spriteR, spriteS, 
     spriteT, spriteU, spriteV, spriteW, spriteX, spriteY, spriteZ;    
+
     
     public static Dictionary<char, Sprite> charToSprite = new Dictionary<char, Sprite> ();
 
@@ -150,14 +147,11 @@ public class KeySelector : MonoBehaviour
                             // Correct so far
                             if (pressedString == sequenceToRepeat)
                             {
-                                
                                 // Complete correct sequence!
                                 Debug.Log("Perfect! You completed the sequence!");
-                                FmodAudioManager.Instance.PlayOneShot(correctSound, this.transform.position);
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;
-                                new WaitForSeconds(2.0f);
 
                                 
                                 if (score < maxScore)
