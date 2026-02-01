@@ -240,7 +240,7 @@ MonoBehaviour:
   - {fileID: 5922720406098760840}
   StringsBanks:
   - {fileID: 5454634710530484404}
-  cacheTime: 639054888450783411
+  cacheTime: 639055454021700832
   cacheVersion: 131635
 --- !u!114 &355618845011110061
 MonoBehaviour:
@@ -337,7 +337,7 @@ MonoBehaviour:
   Path: ggj_fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639054888450783411
+  lastModified: 639055454021700832
   FileSizes:
   - Name: Desktop
     Value: 1262
@@ -410,7 +410,7 @@ MonoBehaviour:
   Path: ggj_fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639054888450768009
+  lastModified: 639055454021678736
   FileSizes:
   - Name: Desktop
     Value: 5079040
