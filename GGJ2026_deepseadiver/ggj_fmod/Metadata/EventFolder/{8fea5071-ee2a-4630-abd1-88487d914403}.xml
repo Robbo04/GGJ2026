@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{8fea5071-ee2a-4630-abd1-88487d914403}">
+		<property name="name">
+			<value>Splash FX</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0208946b-cd52-4d21-a8a0-5e1d655afd00}</destination>
+		</relationship>
+	</object>
+</objects>

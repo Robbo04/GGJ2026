@@ -5,7 +5,7 @@
 			<value>Welding</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{fc0bf9a1-7a17-4ca1-ace0-deca38405ff2}</destination>
@@ -315,6 +315,7 @@
 	<object class="MixerBusEffectChain" id="{ec9021dc-5a71-417c-9919-0da06d61007d}">
 		<relationship name="effects">
 			<destination>{335a2067-f2d5-4ce2-aabd-15838291f697}</destination>
+			<destination>{e1f7ac3c-194d-4e12-b5aa-d57856b52eb4}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ae0fb261-e367-42e0-93ad-713970762f8d}" />
@@ -357,6 +358,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{03c4d779-8024-4efb-9d49-1d20f640a4ee}" />
 	<object class="MixerBusFader" id="{335a2067-f2d5-4ce2-aabd-15838291f697}" />
+	<object class="SpatialiserEffect" id="{e1f7ac3c-194d-4e12-b5aa-d57856b52eb4}" />
 	<object class="MixerBusFader" id="{a80ca1cd-f589-4a11-abf7-7000a81cb682}" />
 	<object class="MultibandEqEffect" id="{be26d75d-752a-41f3-861a-75559b4dfc80}">
 		<property name="frequencyA">
