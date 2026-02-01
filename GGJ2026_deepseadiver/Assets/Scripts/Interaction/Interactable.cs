@@ -10,6 +10,8 @@ public class Interactable : MonoBehaviour
     public string message;
     public UnityEvent interactEvent;
 
+    [SerializeField] public GameObject QTEManager;
+
 
     public void Start()
     {
@@ -48,5 +50,10 @@ public class Interactable : MonoBehaviour
         Debug.Log("Destroyed ");
     }
 
-    
+    public void StartMinigame()
+    {
+        QTEManager.GetComponent<KeySelector>().enabled = true;
+        DestroyThis();
+        Debug.Log("Minigame Started");
+    }
 }
