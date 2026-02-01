@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ff81ab51-5cc3-49b5-86fd-e48337fbb2aa}">
+		<property name="assetPath">
+			<value>306876-Metal-Silo_Wheel-Groans-Mvs_5.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.586666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eeb49640-a1d1-4bbb-8e6d-3e22f8887475}</destination>
+		</relationship>
+	</object>
+</objects>

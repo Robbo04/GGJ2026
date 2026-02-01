@@ -32,5 +32,12 @@ public class FmodAudioManager : MonoBehaviour
     public void SetAmbienceParameter(string paramName, float value)
     {
         ambienceEventInstance.setParameterByName(paramName, value);
+        Debug.Log("parameter triggered");
+    }
+
+    public void stopPlaying()
+    {
+        areaEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

@@ -1,33 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9085358764411255223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Minigame Oneshots/Hammer
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Minigame Oneshots/Hammer
-  Guid:
-    Data1: -106085263
-    Data2: 1335854372
-    Data3: -566285906
-    Data4: 949635410
-  Banks:
-  - {fileID: 5922720406098760840}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &-7263001154372624120
+--- !u!114 &-8034525717089605712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/CageIntoWater/water
+  m_Name: parameter:/CageDown/Parameter 2
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: water
+  Name: Parameter 2
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 1302625310
-    data2: 1355173800
-  Type: 1
+    data1: 1815828958
+    data2: 3334609034
+  Type: 2
   IsGlobal: 0
-  Labels: []
+  Labels:
+  - Looping
+  - Not
   Exists: 1
---- !u!114 &-5127561640033396066
+--- !u!114 &-7839795517771129379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,24 +36,134 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Minigame Oneshots/Welding
+  m_Name: event:/Cage Effects/CageIntoWater
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Minigame Oneshots/Welding
+  Path: event:/Cage Effects/CageIntoWater
   Guid:
-    Data1: 1738717415
-    Data2: 1309625363
-    Data3: -1856750689
-    Data4: 1388036967
+    Data1: 96373893
+    Data2: 1085337003
+    Data3: -118902341
+    Data4: -1432086107
   Banks:
-  - {fileID: 5922720406098760840}
-  IsStream: 0
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5689798077485144365}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12500
+--- !u!114 &-7652214010363794433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/sparks
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/sparks
+  Guid:
+    Data1: 620502226
+    Data2: 1096499474
+    Data3: -1972526715
+    Data4: -1497749075
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4917
+--- !u!114 &-6456032382112844629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cage Effects/CageDown
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Cage Effects/CageDown
+  Guid:
+    Data1: -194337463
+    Data2: 1292374183
+    Data3: -1455426137
+    Data4: -360624204
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8034525717089605712}
+  - {fileID: 7918961552319477528}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12355
+--- !u!114 &-5689798077485144365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CageIntoWater/Parameter 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Parameter 2
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1815828958
+    data2: 3334609034
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Looping
+  - Not
+  Exists: 1
+--- !u!114 &-4775869826494439226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/music1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/music1
+  Guid:
+    Data1: -2081733597
+    Data2: 1268104521
+    Data3: 1951041451
+    Data4: 1529828951
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6000
---- !u!114 &-4520774302512541387
+  Length: 40000
+--- !u!114 &-4346590358719220022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,24 +173,71 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Minigame Oneshots/incorrect
+  m_Name: event:/Splash FX/splash out of water
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Minigame Oneshots/incorrect
+  Path: event:/Splash FX/splash out of water
   Guid:
-    Data1: 91550590
-    Data2: 1170042179
-    Data3: 1731893413
-    Data4: -944677047
+    Data1: -177204806
+    Data2: 1172369779
+    Data3: -882199402
+    Data4: 4979618
   Banks:
-  - {fileID: 5922720406098760840}
+  - {fileID: -2231146326512033929}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-4234069390299421045
+  Length: 7000
+--- !u!114 &-3506273859857805927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/Wheel turn
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/Wheel turn
+  Guid:
+    Data1: -1176144309
+    Data2: 1086468887
+    Data3: 781721741
+    Data4: 99135706
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4200
+--- !u!114 &-2231146326512033929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ggj_fmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639055552845035206
+  FileSizes:
+  - Name: Desktop
+    Value: 8327808
+  Exists: 1
+--- !u!114 &-1861259311064731642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +263,246 @@ MonoBehaviour:
   - Looping
   - Not
   Exists: 1
---- !u!114 &-2365280403161071619
+--- !u!114 &-1752450892974017667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/water
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: water
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1302625310
+    data2: 1355173800
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
+  EditorBanks:
+  - {fileID: 883942944582229072}
+  - {fileID: -2231146326512033929}
+  EditorEvents:
+  - {fileID: -4775869826494439226}
+  - {fileID: 2526240296660165195}
+  - {fileID: 6791358213652276124}
+  - {fileID: 3185156598792715787}
+  - {fileID: -6456032382112844629}
+  - {fileID: -3506273859857805927}
+  - {fileID: 2835810093845624671}
+  - {fileID: 1502146106757949636}
+  - {fileID: 1859380780210352732}
+  - {fileID: -7839795517771129379}
+  - {fileID: 187388444867840842}
+  - {fileID: 7180778405632643430}
+  - {fileID: -4346590358719220022}
+  - {fileID: -7652214010363794433}
+  - {fileID: 5326504106315542545}
+  - {fileID: 5124042345663930861}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -2231146326512033929}
+  StringsBanks:
+  - {fileID: 883942944582229072}
+  cacheTime: 639055552845070313
+  cacheVersion: 131635
+--- !u!114 &187388444867840842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/Correct
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/Correct
+  Guid:
+    Data1: -465344887
+    Data2: 1120105071
+    Data3: -1629872205
+    Data4: -435860022
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
+--- !u!114 &480687139246183020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Character breath/water
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: water
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1302625310
+    data2: 1355173800
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &883942944582229072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ggj_fmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639055552845070313
+  FileSizes:
+  - Name: Desktop
+    Value: 1620
+  Exists: 1
+--- !u!114 &1502146106757949636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/Button
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/Button
+  Guid:
+    Data1: -106085263
+    Data2: 1335854372
+    Data3: -566285906
+    Data4: 949635410
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
+--- !u!114 &1859380780210352732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/incorrect
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/incorrect
+  Guid:
+    Data1: 91550590
+    Data2: 1170042179
+    Data3: 1731893413
+    Data4: -944677047
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
+--- !u!114 &2526240296660165195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/music2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/music2
+  Guid:
+    Data1: -834427343
+    Data2: 1269830756
+    Data3: 2120893843
+    Data4: 2065884040
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 89991
+--- !u!114 &2793134291506648493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/Depth
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Depth
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 2215931285
+    data2: 47050404
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2835810093845624671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,17 +521,17 @@ MonoBehaviour:
     Data3: -1883920987
     Data4: 661592213
   Banks:
-  - {fileID: 5922720406098760840}
+  - {fileID: -2231146326512033929}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4234069390299421045}
-  - {fileID: 5758294102369175333}
+  - {fileID: -1861259311064731642}
+  - {fileID: 6077407174417168405}
   MinDistance: 1
   MaxDistance: 20
-  Length: 12754
---- !u!114 &-2226832647028338101
+  Length: 10000
+--- !u!114 &3185156598792715787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,132 +541,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/above sea
+  m_Name: event:/Splash FX/splash into water
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/above sea
+  Path: event:/Splash FX/splash into water
   Guid:
-    Data1: 1293164677
-    Data2: 1285868685
-    Data3: -542752081
-    Data4: 1545976228
+    Data1: -951135427
+    Data2: 1170889173
+    Data3: 79867548
+    Data4: -2079734863
   Banks:
-  - {fileID: 5922720406098760840}
-  IsStream: 1
+  - {fileID: -2231146326512033929}
+  IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6294
+--- !u!114 &5124042345663930861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/Welding
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/Welding
+  Guid:
+    Data1: 1738717415
+    Data2: 1309625363
+    Data3: -1856750689
+    Data4: 1388036967
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 172032
---- !u!114 &-961004027199803595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ambience/Depth
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Depth
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 2215931285
-    data2: 47050404
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
-  EditorBanks:
-  - {fileID: 5454634710530484404}
-  - {fileID: 5922720406098760840}
-  EditorEvents:
-  - {fileID: 4038308015132863650}
-  - {fileID: 355618845011110061}
-  - {fileID: -2365280403161071619}
-  - {fileID: -9085358764411255223}
-  - {fileID: -4520774302512541387}
-  - {fileID: -2226832647028338101}
-  - {fileID: -5127561640033396066}
-  - {fileID: 5743487410281544040}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 5922720406098760840}
-  StringsBanks:
-  - {fileID: 5454634710530484404}
-  cacheTime: 639055454021700832
-  cacheVersion: 131635
---- !u!114 &355618845011110061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Cage Effects/CageIntoWater
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Cage Effects/CageIntoWater
-  Guid:
-    Data1: 96373893
-    Data2: 1085337003
-    Data3: -118902341
-    Data4: -1432086107
-  Banks:
-  - {fileID: 5922720406098760840}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -7263001154372624120}
-  - {fileID: 8098478691626628257}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 9294
---- !u!114 &1987909598253968523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ambience/water
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: water
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1302625310
-    data2: 1355173800
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &4038308015132863650
+  Length: 6000
+--- !u!114 &5326504106315542545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,64 +604,16 @@ MonoBehaviour:
     Data3: -776657791
     Data4: -253699386
   Banks:
-  - {fileID: 5922720406098760840}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 7500
---- !u!114 &5454634710530484404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: ggj_fmod/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 639055454021700832
-  FileSizes:
-  - Name: Desktop
-    Value: 1262
-  Exists: 1
---- !u!114 &5743487410281544040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ambience
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/ambience
-  Guid:
-    Data1: 659870375
-    Data2: 1244388669
-    Data3: -338226806
-    Data4: 1908488454
-  Banks:
-  - {fileID: 5922720406098760840}
+  - {fileID: -2231146326512033929}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1987909598253968523}
-  - {fileID: -961004027199803595}
+  - {fileID: 480687139246183020}
   MinDistance: 1
   MaxDistance: 20
-  Length: 172032
---- !u!114 &5758294102369175333
+  Length: 7500
+--- !u!114 &6077407174417168405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,7 +637,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &5922720406098760840
+--- !u!114 &6791358213652276124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,18 +646,54 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: ggj_fmod/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 639055454021678736
-  FileSizes:
-  - Name: Desktop
-    Value: 5079040
-  Exists: 1
---- !u!114 &8098478691626628257
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/lever
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/lever
+  Guid:
+    Data1: 216711986
+    Data2: 1121683534
+    Data3: -290638916
+    Data4: -68683646
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1100
+--- !u!114 &7180778405632643430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience
+  Guid:
+    Data1: 659870375
+    Data2: 1244388669
+    Data3: -338226806
+    Data4: 1908488454
+  Banks:
+  - {fileID: -2231146326512033929}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1752450892974017667}
+  - {fileID: 2793134291506648493}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 172032
+--- !u!114 &7918961552319477528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -425,19 +703,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/CageIntoWater/Parameter 2
+  m_Name: parameter:/CageDown/water
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Parameter 2
+  Name: water
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 1815828958
-    data2: 3334609034
-  Type: 2
+    data1: 1302625310
+    data2: 1355173800
+  Type: 1
   IsGlobal: 0
-  Labels:
-  - Looping
-  - Not
+  Labels: []
   Exists: 1

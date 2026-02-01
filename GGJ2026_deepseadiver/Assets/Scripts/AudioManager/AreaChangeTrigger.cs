@@ -7,11 +7,14 @@ public class AreaChangeTrigger : MonoBehaviour
 
     [SerializeField] private Area area;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
-       if(collision.tag.Equals("Player"))
+       if(collision.CompareTag("Player"))
        {
-           FmodAudioManager.Instance.SetMusicArea(area);
+            FmodAudioManager.Instance.SetMusicArea(area);
+            FmodAudioManager.Instance.stopPlaying();
+            Debug.Log("Area changed to: " + area.ToString());
+           
        }
     }
 }
