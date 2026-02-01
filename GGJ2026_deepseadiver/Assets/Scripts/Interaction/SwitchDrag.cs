@@ -108,17 +108,6 @@ public class SwitchDrag : Interactable
         {
             // State changed, invoke event
             Interact();
-            
-            if (isOn)
-            {
-                PulledDown();
-            }
         }
-    }
-    
-    void PulledDown()
-    {
-        // Lever has been pulled down (toggled on)
-        Debug.Log("Lever pulled down!");
     }
 }
