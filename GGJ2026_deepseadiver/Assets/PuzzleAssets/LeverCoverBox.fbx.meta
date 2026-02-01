@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 1cdc16990e0d50841beae1459292a9ab
+<<<<<<<< HEAD:GGJ2026_deepseadiver/Assets/PuzzleAssets/LeverCoverBox.fbx.meta
+guid: 476c57c9f372112429c1f945ff2f3c89
+========
+guid: 08e4916b2a9e2c84eab1daa9ebfe001b
+>>>>>>>> UpdatedSounds:GGJ2026_deepseadiver/Assets/Art/Cage/Cage Control Lever Model.fbx.meta
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
