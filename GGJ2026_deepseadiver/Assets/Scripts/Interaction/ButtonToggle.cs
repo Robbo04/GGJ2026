@@ -30,7 +30,5 @@ public class ButtonToggle : MonoBehaviour
         {
             this.GetComponent<MeshRenderer>().material = materialOff;
         }
-
-        FindObjectOfType<SequencerManager>().UpdateButtons();
     }
 }

@@ -283,7 +283,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{427cf444-9de4-4e22-b8ae-2751e4981942}">
 		<property name="volume">
-			<value>-10</value>
+			<value>-5.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 3</value>
@@ -362,19 +362,19 @@
 	<object class="MixerBusFader" id="{a80ca1cd-f589-4a11-abf7-7000a81cb682}" />
 	<object class="MultibandEqEffect" id="{be26d75d-752a-41f3-861a-75559b4dfc80}">
 		<property name="frequencyA">
-			<value>476.162323</value>
+			<value>550.48114</value>
 		</property>
 		<property name="qualityA">
-			<value>0.697135448</value>
+			<value>1.08943677</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{cfd575de-a870-4cfd-a618-7678a1162a83}" />
 	<object class="MultibandEqEffect" id="{11c088e2-116b-485d-b35e-58ab3e3efd7c}">
 		<property name="frequencyA">
-			<value>1046.37341</value>
+			<value>4949.39258</value>
 		</property>
 		<property name="qualityA">
-			<value>2.38353229</value>
+			<value>3.63163567</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{525a6b5e-73ed-4cd0-b017-9bab4dcb2ea7}">
