@@ -20,6 +20,7 @@ public class WeldingScript : Interactable
     public float weldMarkSize = 0.05f;        // Size of each weld mark
     public Material weldMaterial;             // Material for the weld marks
     public float minPointDistance = 0.05f;    // Minimum distance between weld marks
+    public ParticleSystem weldParticles;      // Particle system to play while welding
     
     private PlayerInputActions playerControls;
     private bool isWelding = false;
@@ -100,6 +101,20 @@ public class WeldingScript : Interactable
     new public void Interact()
     {
         isWelding = !isWelding; // Toggle welding on/off
+        
+        // Control particle system
+        if (weldParticles != null)
+        {
+            if (isWelding)
+            {
+                weldParticles.Play();
+            }
+            else
+            {
+                weldParticles.Stop();
+            }
+        }
+        
         Debug.Log(isWelding ? "Welding started!" : "Welding stopped!");
         base.Interact();
     }
@@ -115,6 +130,13 @@ public class WeldingScript : Interactable
         {
             // Stop welding if button released
             isWelding = false;
+            
+            // Stop particles
+            if (weldParticles != null)
+            {
+                weldParticles.Stop();
+            }
+            
             Debug.Log("Welding stopped!");
         }
     }
@@ -135,6 +157,23 @@ public class WeldingScript : Interactable
         {
             Vector3 hitPoint = hit.point;
             
+            // Move particle system to welding point
+            if (weldParticles != null)
+            {
+                weldParticles.transform.position = hitPoint;
+                weldParticles.transform.rotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
+                
+                // Ensure particles are playing
+                if (!weldParticles.isPlaying)
+                {
+                    weldParticles.Play();
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Weld particles not assigned!");
+            }
+            
             // Only add point if it's far enough from the last point (prevents overcrowding)
             bool shouldAddPoint = weldPoints.Count == 0 || 
                                   Vector3.Distance(hitPoint, weldPoints[weldPoints.Count - 1]) >= minPointDistance;
@@ -151,7 +190,7 @@ public class WeldingScript : Interactable
                 // Orient to surface normal
                 weldMark.transform.rotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
                 
-                Debug.Log($"Welding at: {hitPoint}, Total points: {weldPoints.Count}");
+                //Debug.Log($"Welding at: {hitPoint}, Total points: {weldPoints.Count}");
                 
                 // Check if hit point is near any incomplete knot
                 CheckKnotCompletion(hitPoint);
@@ -176,7 +215,7 @@ public class WeldingScript : Interactable
             if (distance <= knotCompletionRadius)
             {
                 knotsCompleted[i] = true;
-                Debug.Log($"Knot {i} completed!");
+                //Debug.Log($"Knot {i} completed!");
                 
                 // Check if all knots are complete
                 if (AreAllKnotsComplete())
