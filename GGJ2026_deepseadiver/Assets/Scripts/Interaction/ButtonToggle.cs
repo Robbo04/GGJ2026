@@ -16,6 +16,7 @@ public class ButtonToggle : MonoBehaviour
         {
             influenced.GetComponent<ButtonToggle>().toggleLight();
         }
+        FindObjectOfType<SequencerManager>().UpdateButtons();
     }
 
     public void toggleLight()
@@ -31,6 +32,6 @@ public class ButtonToggle : MonoBehaviour
             this.GetComponent<MeshRenderer>().material = materialOff;
         }
 
-        FindObjectOfType<SequencerManager>().UpdateButtons();
+        
     }
 }
