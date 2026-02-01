@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SwitchDrag : Interactable
 {
+    [SerializeField] public GameObject player;
     [Header("Lever Settings")]
     public Transform leverRoot;          // The parent object to rotate (leave empty to use parent)
     public CameraScript cameraScript;    // Reference to camera to lock during drag
@@ -121,5 +122,7 @@ public class SwitchDrag : Interactable
     {
         // Lever has been pulled down (toggled on)
         Debug.Log("Lever pulled down!");
+        player.GetComponent<SplineMovementManager>().MoveToNextKnot(); 
+        
     }
 }
