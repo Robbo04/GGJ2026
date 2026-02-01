@@ -13,7 +13,7 @@ public class KeySelector : MonoBehaviour
     [SerializeField] public GameObject imageRef;
     string c;
     int score = 0;
-    int maxScore = 3;
+    int maxScore = 1;
 
     public float targetTime = 2.0f;
     private bool isListenerRegistered = false;
@@ -153,7 +153,7 @@ public class KeySelector : MonoBehaviour
                                 
                                 // Complete correct sequence!
                                 Debug.Log("Perfect! You completed the sequence!");
-                                FmodAudioManager.Instance.PlayOneShot(correctSound, this.transform.position);
+                                //FmodAudioManager.Instance.PlayOneShot(correctSound, this.transform.position);
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;
