@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273667370583061276}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.492, y: 2.457, z: -0.96}
   m_LocalScale: {x: 0.62877, y: 0.62877, z: 0.095793106}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3616312760876420785}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6524595785015827986
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,13 +62,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6524595785015827986}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000087072885, y: -0.0000000021277637, z: 0.00024436583, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.285, z: 0}
   m_LocalScale: {x: 0.556002, y: 0.521374, z: 3.2304742}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3352096132734603351}
-  m_LocalEulerAnglesHint: {x: 0.001, y: 0, z: 0.028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9105316377131029847
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -175,7 +175,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  QTEManager: {fileID: 0}
 --- !u!114 &2870125031832782114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +209,6 @@ MonoBehaviour:
   interactEvent:
     m_PersistentCalls:
       m_Calls: []
-  QTEManager: {fileID: 0}
   leverRoot: {fileID: 3352096132734603351}
   cameraScript: {fileID: 0}
   minAngle: 0
