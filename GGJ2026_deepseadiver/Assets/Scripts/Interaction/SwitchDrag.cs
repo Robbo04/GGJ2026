@@ -91,7 +91,7 @@ public class SwitchDrag : Interactable
             // Apply rotation to the lever root (parent object)
             if (leverRoot != null)
             {
-                leverRoot.localRotation = Quaternion.Euler(currentAngle, 0f, 0f);
+                leverRoot.localRotation = Quaternion.Euler(0f, 0f, currentAngle);
             }
             
             // Check state change
