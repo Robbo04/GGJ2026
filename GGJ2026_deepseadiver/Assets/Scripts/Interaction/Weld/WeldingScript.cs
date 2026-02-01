@@ -5,6 +5,9 @@ using UnityEngine.Splines;
 
 public class WeldingScript : Interactable
 {
+    public GameObject[] completeActors;
+    public Material completedMaterial;
+
     [Header("Welding Settings")]
     public SplineContainer weldSpline;        // The spline to follow for welding
     public int knotsToGenerate = 10;          // Number of knots to generate along the spline
@@ -200,7 +203,10 @@ public class WeldingScript : Interactable
     {
         Debug.Log("Welding Complete!");
         isWelding = false;
-        
+        foreach (GameObject actor in completeActors)
+        {
+            actor.GetComponent<Renderer>().material = completedMaterial;
+        }
         // Add your completion logic here
         // e.g., unlock door, trigger event, etc.
     }

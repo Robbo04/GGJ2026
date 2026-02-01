@@ -14,16 +14,26 @@ public class Interactable : MonoBehaviour
     public void Start()
     {
         outline = GetComponent<Outline>();
-        DisableOutline();
+        if (outline != null)
+        {
+            DisableOutline();
+        }
     }
 
     public void DisableOutline()
     {
-        outline.enabled = false;
+        if (outline != null)
+        {
+            outline.enabled = false;
+        }
     }
+    
     public void EnableOutline()
     {
-        outline.enabled = true;
+        if (outline != null)
+        {
+            outline.enabled = true;
+        }
     }
 
     public void Interact()
