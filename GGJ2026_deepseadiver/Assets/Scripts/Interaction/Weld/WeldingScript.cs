@@ -8,6 +8,8 @@ public class WeldingScript : Interactable
     public GameObject[] completeActors;
     public Material completedMaterial;
 
+    public GameObject cineCam;
+
     [Header("Welding Settings")]
     public SplineContainer weldSpline;        // The spline to follow for welding
     public int knotsToGenerate = 10;          // Number of knots to generate along the spline
@@ -108,18 +110,13 @@ public class WeldingScript : Interactable
             if (isWelding)
             {
                 weldParticles.Play();
-            }
-            else
-            {
-                weldParticles.Stop();
+                cineCam.GetComponent<CameraScript>().mouseSensitivity = 1; // Raise priority to switch to cine cam
             }
         }
-        
-        Debug.Log(isWelding ? "Welding started!" : "Welding stopped!");
         base.Interact();
     }
     
-    void Update()
+    void LateUpdate()
     {
         // Check if interact button is being held down
         if (isWelding && playerControls.PlayerController.Interact.IsPressed())
@@ -136,7 +133,7 @@ public class WeldingScript : Interactable
             {
                 weldParticles.Stop();
             }
-            
+            cineCam.GetComponent<CameraScript>().mouseSensitivity = 6; // Lower priority to switch back to player cam
             Debug.Log("Welding stopped!");
         }
     }
@@ -167,6 +164,10 @@ public class WeldingScript : Interactable
                 if (!weldParticles.isPlaying)
                 {
                     weldParticles.Play();
+                }
+                else
+                {
+                    weldParticles.Stop();
                 }
             }
             else
@@ -215,7 +216,8 @@ public class WeldingScript : Interactable
             if (distance <= knotCompletionRadius)
             {
                 knotsCompleted[i] = true;
-                //Debug.Log($"Knot {i} completed!");
+                int remaining = GetRemainingKnotsCount();
+                Debug.Log($"Knot {i + 1} completed! {remaining} knots remaining.");
                 
                 // Check if all knots are complete
                 if (AreAllKnotsComplete())
@@ -236,6 +238,19 @@ public class WeldingScript : Interactable
         }
         
         return true;
+    }
+    
+    int GetRemainingKnotsCount()
+    {
+        if (knotsCompleted == null) return 0;
+        
+        int remaining = 0;
+        foreach (bool completed in knotsCompleted)
+        {
+            if (!completed) remaining++;
+        }
+        
+        return remaining;
     }
     
     void WeldComplete()
