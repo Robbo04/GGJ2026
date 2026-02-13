@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class SequencerManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class SequencerManager : MonoBehaviour
     
 
     [SerializeField] GameObject[] buttons;
+    [SerializeField] private EventReference buttonSound;
     public GameObject leverCover;
     public int correctButtons;
 
@@ -25,7 +27,8 @@ public class SequencerManager : MonoBehaviour
         {
             if (button.GetComponent<ButtonToggle>().isOn)
             {
-                correctButtons++;   
+                correctButtons++;
+                print("button pressed");
             }
         }
         print(correctButtons);

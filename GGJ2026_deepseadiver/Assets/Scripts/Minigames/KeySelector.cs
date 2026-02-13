@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.Splines;
 using TMPro;
 using FMODUnity;
 
@@ -22,7 +21,7 @@ public class KeySelector : MonoBehaviour
     bool waitingForInput = false;
 
     [SerializeField] public GameObject player;
-    [SerializeField] private EventReference correctSound;
+    [SerializeField] private EventReference buttonSound;
     [SerializeField] private EventReference moveCrainSound;
 
     public TextMeshProUGUI textref;
@@ -136,7 +135,7 @@ public class KeySelector : MonoBehaviour
                     {
                         pressedString += pressedChar;
                         Debug.Log($"Player pressed: {pressedChar} | Input so far: {pressedString}");
-                        
+                        FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
                         // Display the pressed image
                         if (charToSprite.ContainsKey(pressedChar))
                         {
@@ -153,7 +152,7 @@ public class KeySelector : MonoBehaviour
                                 
                                 // Complete correct sequence!
                                 Debug.Log("Perfect! You completed the sequence!");
-                                FmodAudioManager.Instance.PlayOneShot(correctSound, this.transform.position);
+                                //FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;
