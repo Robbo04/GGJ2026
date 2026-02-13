@@ -309,7 +309,7 @@
 			<value>7.1399999999999828</value>
 		</property>
 		<property name="length">
-			<value>3.3050000000000193</value>
+			<value>2.3600000000000172</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>36.164512245215192</value>
@@ -431,7 +431,7 @@
 	</object>
 	<object class="MultiSound" id="{5ceb09f5-7c65-408f-835d-2d488785a4bb}">
 		<property name="start">
-			<value>9</value>
+			<value>9.5</value>
 		</property>
 		<property name="length">
 			<value>2.5999999999999996</value>
@@ -460,7 +460,7 @@
 	</object>
 	<object class="SingleSound" id="{f7aeb533-5e34-4609-a695-a6ca7f3bf58d}">
 		<property name="start">
-			<value>9</value>
+			<value>9.5</value>
 		</property>
 		<property name="length">
 			<value>3.0000000000000009</value>
@@ -851,7 +851,7 @@
 	</object>
 	<object class="AutomationPoint" id="{323ebf80-06bd-415a-92f3-68c4ffd06203}">
 		<property name="position">
-			<value>9.3999999999999986</value>
+			<value>9.8999999999999986</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -862,7 +862,7 @@
 	</object>
 	<object class="AutomationPoint" id="{206a4be7-606b-43fe-8c62-0fadc7e47424}">
 		<property name="position">
-			<value>11.999999999999996</value>
+			<value>12.499999999999996</value>
 		</property>
 		<property name="value">
 			<value>0</value>

@@ -170,8 +170,7 @@ public class KeySelector : MonoBehaviour
                                     Debug.Log("All rounds complete! You won!");
                                     // Hide image when game is completed
                                     imageRef.GetComponent<Image>().enabled = false;
-                                    player.GetComponent<SplineAnimate>().enabled = true;        
-                                    FmodAudioManager.Instance.PlayOneShot(moveCrainSound, this.transform.position);}
+                                    player.GetComponent<SplineMovementManager>().MoveToNextKnot();                              }
                             }
                         }
                         else

@@ -1,4 +1,7 @@
 using UnityEngine;
+using FMODUnity;
+using UnityEditor.UI;
+
 
 public class ButtonToggle : MonoBehaviour
 {
@@ -6,6 +9,12 @@ public class ButtonToggle : MonoBehaviour
     [SerializeField] Material materialOff;
 
     [SerializeField] GameObject[] influencedObjects;
+
+    [SerializeField] private EventReference buttonSound; 
+
+    [SerializeField] public GameObject gameObject;
+
+
 
     public bool isOn = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,7 +24,9 @@ public class ButtonToggle : MonoBehaviour
         foreach (GameObject influenced in influencedObjects)
         {
             influenced.GetComponent<ButtonToggle>().toggleLight();
+            gameObject.GetComponent<StudioEventEmitter>().Play();
         }
+        FindObjectOfType<SequencerManager>().UpdateButtons();
     }
 
     public void toggleLight()
@@ -31,6 +42,6 @@ public class ButtonToggle : MonoBehaviour
             this.GetComponent<MeshRenderer>().material = materialOff;
         }
 
-        FindObjectOfType<SequencerManager>().UpdateButtons();
+        
     }
 }
