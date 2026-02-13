@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{3f6c32a6-ad10-4d86-b1e9-980aa0c1bd58}">
+		<property name="builtBanksOutputDirectory">
+			<value>../GGJ2026_deepseadiver/Assets</value>
+		</property>
 		<relationship name="masterEventFolder">
 			<destination>{0208946b-cd52-4d21-a8a0-5e1d655afd00}</destination>
 		</relationship>

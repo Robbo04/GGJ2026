@@ -53,7 +53,7 @@ MonoBehaviour:
       Data2: 1335854372
       Data3: -566285906
       Data4: 949635410
-    Path: event:/Minigame Oneshots/Hammer
+    Path: event:/Minigame Oneshots/Button
   moveCrainSound:
     Guid:
       Data1: 2040513894

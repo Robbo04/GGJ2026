@@ -153,7 +153,7 @@ public class KeySelector : MonoBehaviour
                                 
                                 // Complete correct sequence!
                                 Debug.Log("Perfect! You completed the sequence!");
-                                //FmodAudioManager.Instance.PlayOneShot(correctSound, this.transform.position);
+                                FmodAudioManager.Instance.PlayOneShot(correctSound, this.transform.position);
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;
@@ -170,7 +170,8 @@ public class KeySelector : MonoBehaviour
                                     Debug.Log("All rounds complete! You won!");
                                     // Hide image when game is completed
                                     imageRef.GetComponent<Image>().enabled = false;
-                                    player.GetComponent<SplineMovementManager>().MoveToNextKnot();                              }
+                                    player.GetComponent<SplineMovementManager>().MoveToNextKnot();     
+                                    FmodAudioManager.Instance.PlayOneShot(moveCrainSound, this.transform.position);                        }
                             }
                         }
                         else
