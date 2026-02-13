@@ -196,6 +196,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee504e810ed47024f83e4e62996ef6ec, type: 3}
+--- !u!1001 &32224094
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 897358782}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 72.6029
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 72.602875
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 72.6029
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.126
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.538
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+      propertyPath: m_Name
+      value: Divers Helmet Overlay
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
 --- !u!1001 &52693924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4413,6 +4486,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22439ad5d4c38114bbdc26a450b7e089, type: 3}
+--- !u!4 &2021512812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
+  m_PrefabInstance: {fileID: 32224094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2024733427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4582,6 +4660,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.214
       objectReference: {fileID: 0}
+    - target: {fileID: 3991280721495344405, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+      propertyPath: helmetBody
+      value: 
+      objectReference: {fileID: 2021512812}
+    - target: {fileID: 3991280721495344405, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+      propertyPath: playerHelmet
+      value: 
+      objectReference: {fileID: 2021512812}
+    - target: {fileID: 3991280721495344405, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+      propertyPath: cineMachineBody
+      value: 
+      objectReference: {fileID: 2056553546}
+    - target: {fileID: 3991280721495344405, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+      propertyPath: mouseSensitivity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4998090996207120611, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
       propertyPath: m_LocalScale.x
       value: 65.0565
@@ -4612,11 +4706,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1415753303773469620, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626069180}
+    - targetCorrespondingSourceObject: {fileID: 1415753303773469620, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2021512812}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6971627424018299644, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 897358788}
   m_SourcePrefab: {fileID: 100100000, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+--- !u!4 &2056553546 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2832411783334587598, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+  m_PrefabInstance: {fileID: 2044524749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2118950807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6687428274271169993, guid: 55772861d46bf499db02fb88d679daed, type: 3}
