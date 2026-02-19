@@ -12,9 +12,9 @@ public class KeySelector : MonoBehaviour
     [SerializeField] public GameObject imageRef;
     string c;
     int score = 0;
-    int maxScore = 1;
+    public int maxScore = 1;
 
-    public float targetTime = 2.0f;
+    public float targetTime = 1.0f;
     private bool isListenerRegistered = false;
     string pressedString = "";
     string sequenceToRepeat = "";
@@ -22,6 +22,7 @@ public class KeySelector : MonoBehaviour
 
     [SerializeField] public GameObject player;
     [SerializeField] private EventReference buttonSound;
+    [SerializeField] private EventReference showLetterSound;
     [SerializeField] private EventReference moveCrainSound;
 
     public TextMeshProUGUI textref;
@@ -110,6 +111,7 @@ public class KeySelector : MonoBehaviour
                 
                 imageRef.GetComponent<Image>().sprite = charToSprite[c[0]];
                 textref.text = "Count: " + (round + 1).ToString();
+                FmodAudioManager.Instance.PlayOneShot(showLetterSound, transform.position);
             }
             
             yield return new WaitForSeconds(targetTime);
@@ -152,7 +154,7 @@ public class KeySelector : MonoBehaviour
                                 
                                 // Complete correct sequence!
                                 Debug.Log("Perfect! You completed the sequence!");
-                                //FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
+                                FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;

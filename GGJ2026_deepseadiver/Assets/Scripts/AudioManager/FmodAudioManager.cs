@@ -21,7 +21,18 @@ public class FmodAudioManager : MonoBehaviour
 
     public void PlayOneShot(EventReference sound, Vector3 position)
     {
-        RuntimeManager.PlayOneShot(sound, position);
+        var instance = RuntimeManager.CreateInstance(sound);
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+        instance.start();
+        instance.release();
+    }
+
+    public void StopOneShot(EventReference sound)
+    {
+        
+        var instance = RuntimeManager.CreateInstance(sound);
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        instance.release();
     }
 
     public void SetMusicArea(Area area)

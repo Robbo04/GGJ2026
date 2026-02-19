@@ -9,6 +9,7 @@ public class SequencerManager : MonoBehaviour
 
     [SerializeField] GameObject[] buttons;
     [SerializeField] private EventReference buttonSound;
+    [SerializeField] private EventReference completeSound;
     public GameObject leverCover;
     public int correctButtons;
 
@@ -29,6 +30,7 @@ public class SequencerManager : MonoBehaviour
             {
                 correctButtons++;
                 print("button pressed");
+                FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
             }
         }
         print(correctButtons);
@@ -39,6 +41,8 @@ public class SequencerManager : MonoBehaviour
             // Enable all assigned scripts
             lever.GetComponent<Outline>().enabled = true;
             lever.GetComponent<Interactable>().enabled = true;
+            FmodAudioManager.Instance.PlayOneShot(completeSound, transform.position);
+
         }
 
     }
