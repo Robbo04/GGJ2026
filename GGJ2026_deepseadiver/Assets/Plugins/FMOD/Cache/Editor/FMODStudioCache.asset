@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639070915742171713
+  lastModified: 639065971160976207
   FileSizes: []
   Exists: 1
 --- !u!114 &-7209488263076674625
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639070914670914352
+  lastModified: 639065971161317767
   FileSizes: []
   Exists: 1
 --- !u!114 &-6302106806821549260
@@ -131,7 +131,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639070915742182827
+  lastModified: 639071841130706843
   FileSizes:
   - Name: 
     Value: 1882
@@ -283,7 +283,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639070914671362473
+  lastModified: 639065971161453859
   FileSizes: []
   Exists: 1
 --- !u!114 &-2513358532645251745
@@ -349,7 +349,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Cage.bank
   Name: Cage
   StudioPath: bank:/Cage
-  lastModified: 639070914668418779
+  lastModified: 639065971160965701
   FileSizes: []
   Exists: 1
 --- !u!114 &-453247217491591656
@@ -424,7 +424,7 @@ MonoBehaviour:
   - {fileID: -7452456630094267476}
   StringsBanks:
   - {fileID: -5802867154023631713}
-  cacheTime: 639070937832992696
+  cacheTime: 639071841130911209
   cacheVersion: 131635
 --- !u!114 &338055293587491647
 MonoBehaviour:
@@ -626,7 +626,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639070914666704186
+  lastModified: 639065971160728900
   FileSizes: []
   Exists: 1
 --- !u!114 &5847691595516565279
@@ -644,7 +644,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Minigames.bank
   Name: Minigames
   StudioPath: bank:/Minigames
-  lastModified: 639070937832992696
+  lastModified: 639071841130911209
   FileSizes: []
   Exists: 1
 --- !u!114 &5874478624891464934

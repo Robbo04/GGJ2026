@@ -7,7 +7,8 @@ public class CameraScript : MonoBehaviour
     public Transform playerBody;
     //public Transform helmetBody;
     public Transform playerHelmet;
-    private bool isCameraLock = false; 
+    private bool isCameraLock = false;
+    private bool currentlyLocked = false;
 
     float xRotation = 0f;
     float yRotation = 0f;
@@ -66,11 +67,14 @@ public class CameraScript : MonoBehaviour
 
     public void LockOnToggle()
     {
-        isCameraLock = !isCameraLock;
-        if (isCameraLock)
-        {
-            //camera look at main open (lerp to).
-        }
+        //will trigger when player releases control after locking camera
+        print("Return");
+        print(transform.localRotation.eulerAngles);
+        //here you should have an if statement to check whether the current rotation of the camera is equal to centre rotation of the helmet.
+        // if (transform local rotation > or < than helmet rotation)
+        //     ++ or -- transform rotation to meet helmet rotation.
+        // else if (transform local rotation == helmet rotation)
+        //     currentlyLocked = false.
     }
 
     void Update()
@@ -86,19 +90,29 @@ public class CameraScript : MonoBehaviour
 
         if (isCameraLock)
         {
-            //if playing is holding control.
+            //if player is holding control.
             //y rotation
             transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
             //x rotation
+            currentlyLocked = true;
         }
         else
         {
-            //if camera is not holding control
-            //y rotation
-            transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
-            //x rotation
-            playerHelmet.Rotate(Vector3.up * mouseX);
-            playerBody.Rotate(Vector3.up * mouseX);
+            //if player is not holding control
+            if (currentlyLocked)
+            {
+                LockOnToggle();
+            }
+            else
+            {
+                //Lets player control once camera has returned to centre point again.
+                //y rotation
+                transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+                //x rotation
+                playerHelmet.Rotate(Vector3.up * mouseX);
+                playerBody.Rotate(Vector3.up * mouseX);
+            }
+               
         }        
     }
 }
