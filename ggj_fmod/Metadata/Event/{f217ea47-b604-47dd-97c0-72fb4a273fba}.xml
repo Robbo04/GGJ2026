@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{f217ea47-b604-47dd-97c0-72fb4a273fba}">
 		<property name="name">
-			<value>CageDown</value>
+			<value>CageDownFixed</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{459e1e16-ad30-4ccc-874b-06d5d2051be1}</destination>
+			<destination>{2b8e3215-1007-496f-b94d-0b5dd10758d9}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{3d8a6ba7-81d6-4b0f-834f-05b25dca28e2}</destination>
@@ -42,6 +42,9 @@
 		<relationship name="parameters">
 			<destination>{7c07cbef-b1ae-43c3-88d0-514d1f62cd3a}</destination>
 			<destination>{d05a2e2d-3dba-44ab-af17-a73289e2bdce}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{82432ea8-2b84-4fdf-bcef-d537eb50be7c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{3d8a6ba7-81d6-4b0f-834f-05b25dca28e2}">

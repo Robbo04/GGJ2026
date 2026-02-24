@@ -719,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: moveCrainSound.Path
-      value: event:/Cage Effects/CageDown
+      value: event:/Cage Effects/CageDownFixed
       objectReference: {fileID: 0}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: showLetterSound.Path
@@ -759,19 +759,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: moveCrainSound.Guid.Data1
-      value: -194337463
+      value: -233313721
       objectReference: {fileID: 0}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: moveCrainSound.Guid.Data2
-      value: 1292374183
+      value: 1205712388
       objectReference: {fileID: 0}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: moveCrainSound.Guid.Data3
-      value: -1455426137
+      value: -76365673
       objectReference: {fileID: 0}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: moveCrainSound.Guid.Data4
-      value: -360624204
+      value: -1170266294
       objectReference: {fileID: 0}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: showLetterSound.Guid.Data1
@@ -2549,6 +2549,33 @@ MonoBehaviour:
   objectToMove: {fileID: 897358782}
   movementSpeed: 5
   rotateAlongSpline: 0
+--- !u!54 &897358794
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897358781}
+  serializedVersion: 5
+  m_Mass: 0.0000001
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 2
 --- !u!1001 &920007766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2703,6 +2730,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b84fe17a2c032940ade3d667bf6ae90, type: 3}
+--- !u!1001 &942514643
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 24901947332202754, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_Name
+      value: LabeledParameterTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.767156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8028248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.522847
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 71.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
 --- !u!1001 &961434923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3557,7 +3653,7 @@ MonoBehaviour:
       Data2: 1143799865
       Data3: -776657791
       Data4: -253699386
-    Path: event:/Character breath
+    Path: event:/Player/character breath
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
@@ -3588,7 +3684,7 @@ MonoBehaviour:
       Data2: 1244388669
       Data3: -338226806
       Data4: 1908488454
-    Path: event:/ambience
+    Path: event:/Music/Ambience
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
@@ -4907,6 +5003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6971627424018299644, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4917,6 +5017,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2021512812}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6971627424018299644, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 897358794}
     - targetCorrespondingSourceObject: {fileID: 6971627424018299644, guid: c729965b42cbbee40ad337697b9c4ef5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 897358788}
@@ -5004,3 +5107,4 @@ SceneRoots:
   - {fileID: 1305210783}
   - {fileID: 100156689}
   - {fileID: 458861293}
+  - {fileID: 942514643}

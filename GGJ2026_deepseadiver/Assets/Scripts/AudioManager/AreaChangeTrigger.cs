@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class AreaChangeTrigger : MonoBehaviour
@@ -6,12 +7,21 @@ public class AreaChangeTrigger : MonoBehaviour
     [Header ("parameter change")]
 
     [SerializeField] private Area area;
+    [SerializeField] private EventReference ambienceEvent;
+    private FMOD.Studio.EventInstance instance;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-       if(collision.tag.Equals("Player"))
-       {
-           FmodAudioManager.Instance.SetMusicArea(area);
-       }
+        if (other.CompareTag("Player"))
+        {
+            instance = RuntimeManager.CreateInstance("event:/CageDownFixed");
+                instance.start();
+                FmodAudioManager.Instance.SetAmbienceParameter("SetLooping", 1.0f);
+                instance.getParameterByName("Area", out float currentArea);
+                Debug.Log(currentArea);
+                instance.release();
+                
+        }
     }
+ 
 }
