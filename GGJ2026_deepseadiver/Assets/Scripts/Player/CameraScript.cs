@@ -74,7 +74,7 @@ public class CameraScript : MonoBehaviour
         // if (transform local rotation > or < than helmet rotation)
         //     ++ or -- transform rotation to meet helmet rotation.
         // else if (transform local rotation == helmet rotation)
-        //     currentlyLocked = false.
+        //     currentlyLocked = false;
     }
 
     void Update()
@@ -101,7 +101,39 @@ public class CameraScript : MonoBehaviour
             //if player is not holding control
             if (currentlyLocked)
             {
-                LockOnToggle();
+                //LockOnToggle();
+                //Resets Camera Lock Rotation for next usage.
+                if (yRotation != 0f)
+                {
+                    print("YLerp");
+                    if (yRotation > 0f)
+                    {
+                        yRotation++;
+                    }
+                    else if (yRotation < 0f)
+                    {
+                        yRotation--;
+                    }
+                }
+                if (xRotation != 0f)
+                {
+                    print("XLerp");
+                    if (xRotation > 0f)
+                    {
+                        xRotation++;
+                    }
+                    else if (yRotation < 0f)
+                    {
+                        xRotation--;
+                    }
+                }
+                if (xRotation == 0f && yRotation == 0f)
+                {
+                    print("Equalto0");
+                    currentlyLocked = false;
+                    yRotation = 0f;
+                    xRotation = 0f;
+                }
             }
             else
             {
