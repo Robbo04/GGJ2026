@@ -10,8 +10,13 @@ public class CameraScript : MonoBehaviour
     private bool isCameraLock = false;
     private bool currentlyLocked = false;
 
+    //look input rotation floats
     float xRotation = 0f;
     float yRotation = 0f;
+    //rotation input floats
+    float currentXRotation = 0f;
+    float currentYRotation = 0f;
+
     private PlayerInputActions playerControls;
     private Vector2 lookInput;
 
@@ -65,17 +70,12 @@ public class CameraScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void LockOnToggle()
-    {
-        //will trigger when player releases control after locking camera
-        print("Return");
-        print(transform.localRotation.eulerAngles);
-        //here you should have an if statement to check whether the current rotation of the camera is equal to centre rotation of the helmet.
-        // if (transform local rotation > or < than helmet rotation)
-        //     ++ or -- transform rotation to meet helmet rotation.
-        // else if (transform local rotation == helmet rotation)
-        //     currentlyLocked = false;
-    }
+    //public void LockOnToggle()
+    //{
+    //    //will trigger when player releases control after locking camera
+    //    print("Return");
+    //    print(transform.localRotation.eulerAngles);
+    //}
 
     void Update()
     {
@@ -101,39 +101,78 @@ public class CameraScript : MonoBehaviour
             //if player is not holding control
             if (currentlyLocked)
             {
-                //LockOnToggle();
-                //Resets Camera Lock Rotation for next usage.
-                if (yRotation != 0f)
+                currentXRotation = transform.localRotation.x;
+                currentYRotation = transform.localRotation.y;
+                while (currentXRotation != 0f && currentYRotation != 0f)
                 {
-                    print("YLerp");
-                    if (yRotation > 0f)
+                    print (currentXRotation + ", " + currentYRotation);
+                    //Top Right 
+                    if (currentXRotation > 0f && currentYRotation > 0f)
                     {
-                        yRotation++;
+                        
+                        currentXRotation = currentXRotation - 10;
+                        currentYRotation = currentYRotation - 10;
+
+                        if (currentXRotation < 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation < 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
                     }
-                    else if (yRotation < 0f)
+                    //Bottom Left
+                    else if (currentXRotation < 0f && currentXRotation < 0f)
                     {
-                        yRotation--;
+                        currentXRotation = currentXRotation + 10;
+                        currentYRotation = currentYRotation + 10;
+
+                        if (currentXRotation > 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation > 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
+                    }
+                    //Top Left
+                    else if (currentXRotation > 0f && currentYRotation < 0f)
+                    {
+                        currentXRotation = currentXRotation - 10;
+                        currentYRotation = currentYRotation + 10;
+
+                        if (currentXRotation < 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation > 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
+                    }
+                    //Bottom Right
+                    else if (currentXRotation < 0f && currentYRotation > 0f)
+                    {
+                        currentXRotation = currentXRotation + 10;
+                        currentYRotation = currentYRotation - 10;
+
+                        if (currentXRotation > 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation < 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
+                    }
+                    if (currentXRotation == 0f && currentYRotation == 0f)
+                    {
+                        print("break");
                     }
                 }
-                if (xRotation != 0f)
-                {
-                    print("XLerp");
-                    if (xRotation > 0f)
-                    {
-                        xRotation++;
-                    }
-                    else if (yRotation < 0f)
-                    {
-                        xRotation--;
-                    }
-                }
-                if (xRotation == 0f && yRotation == 0f)
-                {
-                    print("Equalto0");
-                    currentlyLocked = false;
-                    yRotation = 0f;
-                    xRotation = 0f;
-                }
+                //currentlyLocked = false;
             }
             else
             {
