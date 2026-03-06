@@ -172,7 +172,7 @@ public class CameraScript : MonoBehaviour
                         print("break");
                     }
                 }
-                //currentlyLocked = false;
+                currentlyLocked = false;
             }
             else
             {

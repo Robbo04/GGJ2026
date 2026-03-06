@@ -5066,7 +5066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae3c41f3b286da4fb6328a4966dff52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HelmetCrack
-  windowName: 0
   texture: []
   FrontPlane: {fileID: 379341064}
   LeftPlane: {fileID: 132120193}
