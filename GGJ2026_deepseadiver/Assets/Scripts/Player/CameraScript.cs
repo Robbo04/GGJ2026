@@ -105,7 +105,6 @@ public class CameraScript : MonoBehaviour
                 currentYRotation = transform.localRotation.y;
                 while (currentXRotation != 0f && currentYRotation != 0f)
                 {
-                    print (currentXRotation + ", " + currentYRotation);
                     //Top Right 
                     if (currentXRotation > 0f && currentYRotation > 0f)
                     {

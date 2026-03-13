@@ -11,6 +11,9 @@ public class Interactable : MonoBehaviour
     public UnityEvent interactEvent;
 
     [SerializeField] public GameObject QTEManager;
+    [SerializeField]  public GameObject FrontPlane;
+    [SerializeField] public GameObject LeftPlane;
+    [SerializeField] public GameObject RightPlane;
 
 
     public void Start()
@@ -40,6 +43,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        print("FrontInteracted");
         interactEvent.Invoke();
     }
 
@@ -55,5 +59,26 @@ public class Interactable : MonoBehaviour
         QTEManager.GetComponent<KeySelector>().enabled = true;
         DestroyThis();
         Debug.Log("Minigame Started");
+    }
+
+    public void RemoveFrontWindowCrack()
+    {
+        FrontPlane.GetComponent<Renderer>().enabled = !FrontPlane.GetComponent<Renderer>().enabled;
+        FrontPlane.GetComponent<BoxCollider>().enabled = !FrontPlane.GetComponent<BoxCollider>().enabled;
+        FrontPlane.GetComponent<HelmetCrack>().isFrontCracked =  !FrontPlane.GetComponent<HelmetCrack>().isFrontCracked;
+    }
+
+    public void RemoveLeftWindowCrack()
+    {
+        LeftPlane.GetComponent<Renderer>().enabled = !LeftPlane.GetComponent<Renderer>().enabled;
+        LeftPlane.GetComponent<BoxCollider>().enabled = !LeftPlane.GetComponent<BoxCollider>().enabled;
+        LeftPlane.GetComponent<HelmetCrack>().isLeftCracked =  !LeftPlane.GetComponent<HelmetCrack>().isLeftCracked;
+    }
+
+    public void RemoveRightWindowCrack()
+    {
+        RightPlane.GetComponent<Renderer>().enabled = !RightPlane.GetComponent<Renderer>().enabled;
+        RightPlane.GetComponent<BoxCollider>().enabled = !RightPlane.GetComponent<BoxCollider>().enabled;
+        RightPlane.GetComponent<HelmetCrack>().isRightCracked =  !RightPlane.GetComponent<HelmetCrack>().isRightCracked;
     }
 }

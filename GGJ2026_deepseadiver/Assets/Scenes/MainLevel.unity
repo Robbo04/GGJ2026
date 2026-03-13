@@ -218,7 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.126
+      value: 0.034
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -226,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9543d5321bea31649a6cc3eeb6933ca0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -708,10 +708,12 @@ GameObject:
   - component: {fileID: 132120194}
   - component: {fileID: 132120197}
   - component: {fileID: 132120196}
-  - component: {fileID: 132120195}
+  - component: {fileID: 132120198}
+  - component: {fileID: 132120199}
+  - component: {fileID: 132120200}
   m_Layer: 0
   m_Name: LeftPlane
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -725,34 +727,12 @@ Transform:
   m_GameObject: {fileID: 132120193}
   serializedVersion: 2
   m_LocalRotation: {x: -0.15304591, y: 0.15304591, z: -0.6903456, w: 0.6903456}
-  m_LocalPosition: {x: -0.01093, y: -0.00067, z: 0.00376}
-  m_LocalScale: {x: 0.000834281, y: 0.0008342814, z: 0.000834281}
+  m_LocalPosition: {x: -0.01064, y: -0.00067, z: 0.00363}
+  m_LocalScale: {x: 0.0007089219, y: 0.0007089223, z: 0.0007089219}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021512812}
   m_LocalEulerAnglesHint: {x: 0, y: 25, z: -90}
---- !u!64 &132120195
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132120193}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &132120196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -810,6 +790,77 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132120193}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &132120198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132120193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &132120199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132120193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d032b06f788a54bc885e327a1fc3c75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  message: Pressed
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 132120199}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: RemoveLeftWindowCrack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  QTEManager: {fileID: 0}
+  FrontPlane: {fileID: 0}
+  LeftPlane: {fileID: 132120193}
+  RightPlane: {fileID: 0}
+--- !u!65 &132120200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132120193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 10.000002, y: 1.5, z: 10.000003}
+  m_Center: {x: 0, y: -0.00000667572, z: -0.0000076293945}
 --- !u!1001 &207776463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1252,10 +1303,12 @@ GameObject:
   - component: {fileID: 379341065}
   - component: {fileID: 379341068}
   - component: {fileID: 379341067}
-  - component: {fileID: 379341066}
+  - component: {fileID: 379341069}
+  - component: {fileID: 379341070}
+  - component: {fileID: 379341071}
   m_Layer: 0
   m_Name: FrontPlane
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1269,34 +1322,12 @@ Transform:
   m_GameObject: {fileID: 379341064}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.00012, y: -0.00051, z: 0.01145}
-  m_LocalScale: {x: 0.000834281, y: 0.0008342814, z: 0.000834281}
+  m_LocalPosition: {x: -0.00012, y: -0.00051, z: 0.01011}
+  m_LocalScale: {x: 0.0006941718, y: 0.00069417217, z: 0.0006941718}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021512812}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
---- !u!64 &379341066
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379341064}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &379341067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1354,6 +1385,77 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379341064}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &379341069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379341064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &379341070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379341064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d032b06f788a54bc885e327a1fc3c75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  message: Pressed
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 379341070}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: RemoveFrontWindowCrack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  QTEManager: {fileID: 0}
+  FrontPlane: {fileID: 379341064}
+  LeftPlane: {fileID: 0}
+  RightPlane: {fileID: 0}
+--- !u!65 &379341071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379341064}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 10, y: 1.5, z: 10.000001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &413015637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,10 +3227,12 @@ GameObject:
   - component: {fileID: 1114939450}
   - component: {fileID: 1114939453}
   - component: {fileID: 1114939452}
-  - component: {fileID: 1114939451}
+  - component: {fileID: 1114939454}
+  - component: {fileID: 1114939455}
+  - component: {fileID: 1114939456}
   m_Layer: 0
   m_Name: RightPlane
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3142,34 +3246,12 @@ Transform:
   m_GameObject: {fileID: 1114939449}
   serializedVersion: 2
   m_LocalRotation: {x: -0.69113743, y: 0.69113743, z: -0.1494292, w: 0.1494292}
-  m_LocalPosition: {x: 0.0107, y: -0.00067, z: 0.00406}
+  m_LocalPosition: {x: 0.00999, y: -0.00067, z: 0.00374}
   m_LocalScale: {x: 0.000834281, y: 0.0008342814, z: 0.000834281}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021512812}
   m_LocalEulerAnglesHint: {x: 0, y: 155.6, z: -90}
---- !u!64 &1114939451
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114939449}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1114939452
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3227,6 +3309,77 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114939449}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1114939454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114939449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1114939455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114939449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d032b06f788a54bc885e327a1fc3c75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  message: Pressed
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1114939455}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: RemoveRightWindowCrack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  QTEManager: {fileID: 0}
+  FrontPlane: {fileID: 0}
+  LeftPlane: {fileID: 0}
+  RightPlane: {fileID: 1114939449}
+--- !u!65 &1114939456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114939449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 10, y: 1.5, z: 10.000002}
+  m_Center: {x: -0.00012207031, y: 0, z: 0}
 --- !u!1001 &1305210783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5067,7 +5220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HelmetCrack
   windowName: 0
-  texture: []
+  isFrontCracked: 0
+  isLeftCracked: 0
+  isRightCracked: 0
   FrontPlane: {fileID: 379341064}
   LeftPlane: {fileID: 132120193}
   RightPlane: {fileID: 1114939449}
