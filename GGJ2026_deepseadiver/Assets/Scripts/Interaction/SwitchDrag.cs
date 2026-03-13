@@ -16,8 +16,8 @@ public class SwitchDrag : Interactable
     public float dragSensitivity = 0.5f; // How much drag affects rotation
     public float onThreshold = 40f;      // Angle at which lever is considered "on"
 
-    [SerializeField] private EventReference leverSound;
-    [SerializeField] private EventReference moveCrainSound;
+    [SerializeField] private FMOD.Studio.EventInstance leverSound;
+    [SerializeField] private FMOD.Studio.EventInstance moveCrainSound;
     
     
     private PlayerInputActions playerControls;
@@ -42,6 +42,9 @@ public class SwitchDrag : Interactable
         playerControls.PlayerController.Look.performed += OnLook;
         playerControls.PlayerController.Look.canceled += OnLook;
         playerControls.PlayerController.Interact.canceled += OnInteractCanceled;
+
+        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageDownFixed");
+        leverSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/lever");
     }
     
     void OnDestroy()

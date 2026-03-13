@@ -6,21 +6,19 @@ public class AreaChangeTrigger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header ("parameter change")]
 
-    [SerializeField] private Area area;
-    [SerializeField] private EventReference ambienceEvent;
+    [SerializeField] private Looping loop;
+    [SerializeField] public GameObject QTEManager;
+    [SerializeField] public GameObject AudioManager;
     private FMOD.Studio.EventInstance instance;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            instance = RuntimeManager.CreateInstance("event:/CageDownFixed");
-                instance.start();
-                FmodAudioManager.Instance.SetAmbienceParameter("SetLooping", 1.0f);
-                instance.getParameterByName("Area", out float currentArea);
-                Debug.Log(currentArea);
-                instance.release();
-                
+        {   
+            AudioManager.GetComponent<FmodAudioManager>().EventInstance = QTEManager.GetComponent<KeySelector>().moveCrainSound;
+            instance = AudioManager.GetComponent<FmodAudioManager>().EventInstance;
+            FmodAudioManager.Instance.SetAmbienceParameter("SetLooping", loop);
         }
     }
  

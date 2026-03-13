@@ -8,8 +8,8 @@ public class SequencerManager : MonoBehaviour
     
 
     [SerializeField] GameObject[] buttons;
-    [SerializeField] private EventReference buttonSound;
-    [SerializeField] private EventReference completeSound;
+    [SerializeField] private FMOD.Studio.EventInstance buttonSound;
+    [SerializeField] private FMOD.Studio.EventInstance completeSound;
     public GameObject leverCover;
     public int correctButtons;
 
@@ -17,6 +17,8 @@ public class SequencerManager : MonoBehaviour
     {
         correctButtons = 0;
         //print(buttons.Length);
+        buttonSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Button");
+        completeSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Correct");
     }
 
     // Update is called once per frame

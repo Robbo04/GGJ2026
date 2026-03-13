@@ -1,27 +1,32 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using System;
 
 public class FmodAudioManager : MonoBehaviour
 {
   public static FmodAudioManager Instance { get; private set; }
-  public EventInstance ambienceEventInstance;
+  public FMOD.Studio.EventInstance EventInstance;
 
-  public EventInstance areaEventInstance;
+  public FMOD.Studio.EventInstance areaEventInstance;
+
+  [SerializeField] private GameObject QTEManager;
+
+  public EventReference example;
 
 
     private void Awake()
     {
         if (Instance != null)
         {
-           Debug.LogError("Multiple instances of FmodAudioManager detected!"); 
+           Debug.LogError("Multiple instances of FmodAudioManager detected!");
         }
         Instance = this;
     }
 
-    public void PlayOneShot(EventReference sound, Vector3 position)
+    public void PlayOneShot(EventInstance sound, Vector3 position)
     {
-        var instance = RuntimeManager.CreateInstance(sound);
+        EventInstance instance = sound;
         instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
         instance.start();
         instance.release();
@@ -35,13 +40,13 @@ public class FmodAudioManager : MonoBehaviour
         instance.release();
     }
 
-    public void SetMusicArea(Area area)
+    public void SetWaterArea(string paramName, Area area)
     {
-        areaEventInstance.setParameterByName("Area", (float) area);
+        areaEventInstance.setParameterByName(paramName, (float) area);
     }
 
-    public void SetAmbienceParameter(string paramName, float value)
+    public void SetAmbienceParameter(string paramName, Looping loop)
     {
-        ambienceEventInstance.setParameterByName(paramName, value);
+        EventInstance.setParameterByName(paramName, (float) loop, false);
     }
 }

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using UnityEngine;
+using FMOD.Studio;
+
 
 #if UNITY_URP_EXIST
 using UnityEngine.Rendering.Universal;
@@ -1598,6 +1600,11 @@ retry:
                     windowRect = new Rect(margin, margin, width, height);
                     break;
             }
+        }
+
+        public static object CreateInstance(EventInstance sound)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -21,9 +21,9 @@ public class KeySelector : MonoBehaviour
     bool waitingForInput = false;
 
     [SerializeField] public GameObject player;
-    [SerializeField] private EventReference buttonSound;
-    [SerializeField] private EventReference showLetterSound;
-    [SerializeField] private EventReference moveCrainSound;
+    [SerializeField] public FMOD.Studio.EventInstance  buttonSound;
+    [SerializeField] public FMOD.Studio.EventInstance  showLetterSound;
+    [SerializeField] public FMOD.Studio.EventInstance moveCrainSound;
 
     public TextMeshProUGUI textref;
 
@@ -65,6 +65,10 @@ public class KeySelector : MonoBehaviour
         charToSprite.Add('X', spriteX);
         charToSprite.Add('Y', spriteY);
         charToSprite.Add('Z', spriteZ);
+
+        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageDownFixed");
+        buttonSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Button");
+        showLetterSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/showLetters");
         
         // Hide the image initially
         imageRef.GetComponent<Image>().enabled = false;
