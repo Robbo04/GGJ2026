@@ -10,122 +10,59 @@ using UnityEngine.SceneManagement;
 
 public class HelmetCrack : MonoBehaviour
 {
+    public GameObject[] CrackedWindow; //list of gameobjects
+    int crackCount;
 
-    // private Renderer FrontRend;
-    // private Renderer LeftRend;
-    // private Renderer RightRend;
-    // private int randomTextureIndex;
-
-
-    [SerializeField] private WindowName windowName;
-
-    int randomNumber;
-    int randomCrackObject;
-
-    public bool isFrontCracked = false;
-    public bool isLeftCracked = false;
-    public bool isRightCracked = false;
+    float elapsedTime;
 
     //public Texture[] texture;
-    float elapsedTime;
-    
 
-    public GameObject FrontPlane;
-    public GameObject LeftPlane;
-    public GameObject RightPlane;
-
-    void Start ()
+    void Start()
     {
-        FrontPlane.GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
-        LeftPlane.GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
-        RightPlane.GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
+        crackCount = 0;
+    }
+
+    void FixedUpdate()
+    {
+        if(crackCount < 3)
+        {
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime > 5)
+            {
+                int randomNumber = Random.Range(0,3);
+                print ("RandomNumber " + randomNumber);
+                if (randomNumber == 2)
+                {
+                    int randomCrack;
+                    do
+                    {
+                        randomCrack = Random.Range(0, CrackedWindow.Length);
+                        print("RandomCrack " + randomCrack);
+                    } while (CrackedWindow[randomCrack].GetComponent<Crack>().isCracked);
+                    CrackedWindow[randomCrack].GetComponent<Crack>().AddCracked();
+                }
+                elapsedTime = 0;
+            }
+        }
     }
 
     void Update()
     {
-        if (elapsedTime == 5)
+        // Check how many cracks are currently active
+        crackCount = 0;
+        foreach (GameObject a in CrackedWindow)
         {
-                    print ("Time " + elapsedTime);
-        }
-
-        elapsedTime += Time.deltaTime;
-        if (isFrontCracked && isLeftCracked && isRightCracked)
-        {
-            //Change later to add death screen menu
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
-        }
-        else
-        {
-            if (elapsedTime > 5)
+            if (a.GetComponent<Crack>().isCracked)
             {
-                randomNumber = Random.Range(0,4);
-                print ("RandomNumber " + randomNumber);
-                if (randomNumber == 2)
-                {
-                    randomCrackObject = Random.Range(0,3);
-
-                    print ("RandomCrackObject " + randomCrackObject);
-                    if (randomCrackObject == (int) WindowName.FrontWindow)
-                    {
-                        if (!isFrontCracked)
-                        {
-                            print("FrontWindowCrack");
-                            //FMOD Crack sound play Front Side
-                            FrontPlane.GetComponent<Renderer>().enabled = GetComponent<Renderer>().enabled;
-                            FrontPlane.GetComponent<BoxCollider>().enabled = FrontPlane.GetComponent<BoxCollider>().enabled;
-                            elapsedTime = 0;
-                            isFrontCracked = true;
-                        }
-                        else if (isFrontCracked)
-                        {
-                            randomCrackObject = Random.Range(1,2);
-                        }                  
-                    }
-                    else if (randomCrackObject == (int) WindowName.LeftWindow)
-                    {
-                        if (!isLeftCracked)
-                        {
-                            print("Left Window Crack");
-                            //FMOD Crack sound play Left Side
-                            LeftPlane.GetComponent<Renderer>().enabled = GetComponent<Renderer>().enabled;
-                            LeftPlane.GetComponent<BoxCollider>().enabled = LeftPlane.GetComponent<BoxCollider>().enabled;
-                            elapsedTime = 0;
-                            isLeftCracked = true;
-                        }
-                        else if (isLeftCracked)
-                        {
-                            randomCrackObject = Random.Range(0,2);
-                            if (randomCrackObject == 1)
-                            {
-                                randomCrackObject = 2;
-                            }
-                        }       
-                    }
-                    else if (randomCrackObject == (int) WindowName.RightWindow)
-                    {
-                        if (!isRightCracked)
-                        {
-                            print ("Right Window Crack");
-                            //FMOD Crack sound play Right Side
-                            RightPlane.GetComponent<Renderer>().enabled = GetComponent<Renderer>().enabled;
-                            RightPlane.GetComponent<BoxCollider>().enabled = RightPlane.GetComponent<BoxCollider>().enabled;
-                            elapsedTime = 0;
-                            isRightCracked = true;
-                        }  
-                        else if (isRightCracked)
-                        {
-                            randomCrackObject = Random.Range(0,1);
-                        } 
-                    }               
-                }
-                else
-                {
-                    elapsedTime = 0;
-                }
-            
+                crackCount++;
             }
         }
+        if (crackCount == 3)
+        {
+            print("Game over logic");
+            SceneManager.LoadScene("MainLevel");
+        }
     }
+
 
 }
