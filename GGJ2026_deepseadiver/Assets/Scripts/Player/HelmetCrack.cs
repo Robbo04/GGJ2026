@@ -12,7 +12,6 @@ public class HelmetCrack : MonoBehaviour
 {
     public GameObject[] CrackedWindow; //list of gameobjects
     int crackCount;
-
     float elapsedTime;
 
     //public Texture[] texture;
