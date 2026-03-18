@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639091695255583718
+  lastModified: 639094421854236060
   FileSizes: []
   Exists: 1
 --- !u!114 &-7209488263076674625
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639091695256195255
+  lastModified: 639094421856188859
   FileSizes: []
   Exists: 1
 --- !u!114 &-6302106806821549260
@@ -155,10 +155,10 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639094382188814880
+  lastModified: 639094421854255945
   FileSizes:
   - Name: 
-    Value: 1936
+    Value: 2196
   Exists: 1
 --- !u!114 &-5557069144763392934
 MonoBehaviour:
@@ -333,7 +333,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639094382189114591
+  lastModified: 639094421856451506
   FileSizes: []
   Exists: 1
 --- !u!114 &-2090742084736751052
@@ -389,6 +389,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-1109702540457039449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame Oneshots/Cracking
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame Oneshots/Cracking
+  Guid:
+    Data1: -2006344102
+    Data2: 1168547278
+    Data3: -1118589016
+    Data4: 1720733390
+  Banks:
+  - {fileID: 5847691595516565279}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1982
 --- !u!114 &-749984573786340553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +431,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Cage.bank
   Name: Cage
   StudioPath: bank:/Cage
-  lastModified: 639094382188804740
+  lastModified: 639094421854165617
   FileSizes: []
   Exists: 1
 --- !u!114 &-453247217491591656
@@ -475,12 +502,13 @@ MonoBehaviour:
   - {fileID: -2090742084736751052}
   - {fileID: 7384760265773913363}
   - {fileID: 5702278749404225624}
+  - {fileID: -1109702540457039449}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7452456630094267476}
   StringsBanks:
   - {fileID: -5802867154023631713}
-  cacheTime: 639094382189114591
+  cacheTime: 639094421856451506
   cacheVersion: 131635
 --- !u!114 &338055293587491647
 MonoBehaviour:
@@ -653,7 +681,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639094382188533491
+  lastModified: 639094421853380313
   FileSizes: []
   Exists: 1
 --- !u!114 &5702278749404225624
@@ -700,7 +728,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Minigames.bank
   Name: Minigames
   StudioPath: bank:/Minigames
-  lastModified: 639091695256054986
+  lastModified: 639094421855786789
   FileSizes: []
   Exists: 1
 --- !u!114 &5874478624891464934
@@ -943,4 +971,4 @@ MonoBehaviour:
   - {fileID: 1560833220589708259}
   MinDistance: 1
   MaxDistance: 20
-  Length: 7000
+  Length: 7794

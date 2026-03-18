@@ -7,10 +7,13 @@ using Unity.VisualScripting;
 using NUnit.Framework;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class HelmetCrack : MonoBehaviour
 {
     public GameObject[] CrackedWindow; //list of gameobjects
+
+    [SerializeField] public FMOD.Studio.EventInstance crackSound;
     int crackCount;
     float elapsedTime;
 
@@ -39,6 +42,9 @@ public class HelmetCrack : MonoBehaviour
                         print("RandomCrack " + randomCrack);
                     } while (CrackedWindow[randomCrack].GetComponent<Crack>().isCracked);
                     CrackedWindow[randomCrack].GetComponent<Crack>().AddCracked();
+                    crackSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Cracking");
+                    FmodAudioManager.Instance.PlayOneShot(crackSound, transform.position);
+                    Debug.Log("crackedSound");
                 }
                 elapsedTime = 0;
             }

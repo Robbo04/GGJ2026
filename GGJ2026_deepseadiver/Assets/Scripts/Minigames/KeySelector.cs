@@ -66,7 +66,7 @@ public class KeySelector : MonoBehaviour
         charToSprite.Add('Y', spriteY);
         charToSprite.Add('Z', spriteZ);
 
-        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageIntoWater");
+        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageDownFixed");
         buttonSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Button");
         showLetterSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/showLetters");
         
