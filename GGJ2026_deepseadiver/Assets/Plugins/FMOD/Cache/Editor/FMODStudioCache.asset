@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639094322029940128
+  lastModified: 639091695255583718
   FileSizes: []
   Exists: 1
 --- !u!114 &-7209488263076674625
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639094322053963066
+  lastModified: 639091695256195255
   FileSizes: []
   Exists: 1
 --- !u!114 &-6302106806821549260
@@ -155,7 +155,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639094322029950118
+  lastModified: 639094382188814880
   FileSizes:
   - Name: 
     Value: 1936
@@ -333,7 +333,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639094322054210784
+  lastModified: 639094382189114591
   FileSizes: []
   Exists: 1
 --- !u!114 &-2090742084736751052
@@ -404,7 +404,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Cage.bank
   Name: Cage
   StudioPath: bank:/Cage
-  lastModified: 639094330011631834
+  lastModified: 639094382188804740
   FileSizes: []
   Exists: 1
 --- !u!114 &-453247217491591656
@@ -480,7 +480,7 @@ MonoBehaviour:
   - {fileID: -7452456630094267476}
   StringsBanks:
   - {fileID: -5802867154023631713}
-  cacheTime: 639094330011631834
+  cacheTime: 639094382189114591
   cacheVersion: 131635
 --- !u!114 &338055293587491647
 MonoBehaviour:
@@ -653,7 +653,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639094322016646405
+  lastModified: 639094382188533491
   FileSizes: []
   Exists: 1
 --- !u!114 &5702278749404225624
@@ -675,8 +675,8 @@ MonoBehaviour:
     Data3: -776657791
     Data4: -253699386
   Banks:
-  - {fileID: -2907550919011448164}
   - {fileID: -749984573786340553}
+  - {fileID: -2907550919011448164}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Minigames.bank
   Name: Minigames
   StudioPath: bank:/Minigames
-  lastModified: 639094322040917250
+  lastModified: 639091695256054986
   FileSizes: []
   Exists: 1
 --- !u!114 &5874478624891464934
