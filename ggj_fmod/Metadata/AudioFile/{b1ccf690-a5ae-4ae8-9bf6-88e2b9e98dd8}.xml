@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b1ccf690-a5ae-4ae8-9bf6-88e2b9e98dd8}">
+		<property name="assetPath">
+			<value>tanweraman-ice-break-445026.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10.128</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eeb49640-a1d1-4bbb-8e6d-3e22f8887475}</destination>
+		</relationship>
+	</object>
+</objects>

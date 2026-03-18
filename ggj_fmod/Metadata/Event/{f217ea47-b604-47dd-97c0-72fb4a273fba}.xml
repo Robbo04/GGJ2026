@@ -65,7 +65,7 @@
 			<destination>{cb143e3e-e492-4eeb-8788-7d80ea6e064c}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{e35d50f9-8320-4156-b71b-0a0dd993a241}</destination>
+			<destination>{c2a390ea-c72e-44eb-a38a-d0e406d06fff}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{2d963d32-22dd-42bb-97c3-0045d0c26c58}" />
@@ -169,13 +169,13 @@
 	<object class="MixerBusPanner" id="{cb143e3e-e492-4eeb-8788-7d80ea6e064c}" />
 	<object class="SingleSound" id="{75cb79f3-c6fb-410d-8b1c-f0f7e981788c}">
 		<property name="start">
-			<value>0.4999999999999995</value>
+			<value>0.99999999999999911</value>
 		</property>
 		<property name="length">
-			<value>6.0999999999999996</value>
+			<value>5.6000000000000014</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>33.259215130513617</value>
+			<value>33.679663338140486</value>
 		</property>
 		<property name="pitch">
 			<value>-3</value>
@@ -618,10 +618,10 @@
 	<object class="MixerBusFader" id="{715a068c-51d8-4582-9213-be720f484436}" />
 	<object class="MultibandEqEffect" id="{f781075e-4815-424e-a699-c76e9a052ed8}">
 		<property name="frequencyA">
-			<value>663.324829</value>
+			<value>16805.2832</value>
 		</property>
 		<property name="qualityA">
-			<value>0.730814755</value>
+			<value>0.570868909</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{d9f4a843-26ce-4bb2-bac3-fd6e676a5d60}">
