@@ -11,6 +11,9 @@ public class Interactable : MonoBehaviour
     public UnityEvent interactEvent;
 
     [SerializeField] public GameObject QTEManager;
+    // [SerializeField]  public GameObject FrontPlane;
+    // [SerializeField] public GameObject LeftPlane;
+    // [SerializeField] public GameObject RightPlane;
 
 
     public void Start()
@@ -40,6 +43,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        print("FrontInteracted");
         interactEvent.Invoke();
     }
 

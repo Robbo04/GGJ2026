@@ -7,10 +7,16 @@ public class CameraScript : MonoBehaviour
     public Transform playerBody;
     //public Transform helmetBody;
     public Transform playerHelmet;
-    private bool isCameraLock = false; 
+    private bool isCameraLock = false;
+    private bool currentlyLocked = false;
 
+    //look input rotation floats
     float xRotation = 0f;
     float yRotation = 0f;
+    //rotation input floats
+    float currentXRotation = 0f;
+    float currentYRotation = 0f;
+
     private PlayerInputActions playerControls;
     private Vector2 lookInput;
 
@@ -64,14 +70,12 @@ public class CameraScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void LockOnToggle()
-    {
-        isCameraLock = !isCameraLock;
-        if (isCameraLock)
-        {
-            //camera look at main open (lerp to).
-        }
-    }
+    //public void LockOnToggle()
+    //{
+    //    //will trigger when player releases control after locking camera
+    //    print("Return");
+    //    print(transform.localRotation.eulerAngles);
+    //}
 
     void Update()
     {
@@ -86,19 +90,99 @@ public class CameraScript : MonoBehaviour
 
         if (isCameraLock)
         {
-            //if playing is holding control.
+            //if player is holding control.
             //y rotation
             transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
             //x rotation
+            currentlyLocked = true;
         }
         else
         {
-            //if camera is not holding control
-            //y rotation
-            transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
-            //x rotation
-            playerHelmet.Rotate(Vector3.up * mouseX);
-            playerBody.Rotate(Vector3.up * mouseX);
+            //if player is not holding control
+            if (currentlyLocked)
+            {
+                currentXRotation = transform.localRotation.x;
+                currentYRotation = transform.localRotation.y;
+                while (currentXRotation != 0f && currentYRotation != 0f)
+                {
+                    //Top Right 
+                    if (currentXRotation > 0f && currentYRotation > 0f)
+                    {
+                        
+                        currentXRotation = currentXRotation - 10;
+                        currentYRotation = currentYRotation - 10;
+
+                        if (currentXRotation < 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation < 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
+                    }
+                    //Bottom Left
+                    else if (currentXRotation < 0f && currentXRotation < 0f)
+                    {
+                        currentXRotation = currentXRotation + 10;
+                        currentYRotation = currentYRotation + 10;
+
+                        if (currentXRotation > 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation > 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
+                    }
+                    //Top Left
+                    else if (currentXRotation > 0f && currentYRotation < 0f)
+                    {
+                        currentXRotation = currentXRotation - 10;
+                        currentYRotation = currentYRotation + 10;
+
+                        if (currentXRotation < 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation > 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
+                    }
+                    //Bottom Right
+                    else if (currentXRotation < 0f && currentYRotation > 0f)
+                    {
+                        currentXRotation = currentXRotation + 10;
+                        currentYRotation = currentYRotation - 10;
+
+                        if (currentXRotation > 0f)
+                        {
+                            currentXRotation = 0f;
+                        }
+                        else if (currentYRotation < 0f)
+                        {
+                            currentYRotation = 0f;
+                        }
+                    }
+                    if (currentXRotation == 0f && currentYRotation == 0f)
+                    {
+                        print("break");
+                    }
+                }
+                currentlyLocked = false;
+            }
+            else
+            {
+                //Lets player control once camera has returned to centre point again.
+                //y rotation
+                transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+                //x rotation
+                playerHelmet.Rotate(Vector3.up * mouseX);
+                playerBody.Rotate(Vector3.up * mouseX);
+            }
+               
         }        
     }
 }
