@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639094430989000963
+  lastModified: 639094421854236060
   FileSizes: []
   Exists: 1
 --- !u!114 &-7209488263076674625
@@ -87,7 +87,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639094430989355990
+  lastModified: 639094421856188859
   FileSizes: []
   Exists: 1
 --- !u!114 &-6302106806821549260
@@ -155,7 +155,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639094430989010948
+  lastModified: 639094421854255945
   FileSizes:
   - Name: 
     Value: 2196
@@ -333,7 +333,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639094430989496028
+  lastModified: 639094421856451506
   FileSizes: []
   Exists: 1
 --- !u!114 &-2090742084736751052
@@ -410,7 +410,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5847691595516565279}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -431,7 +431,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Cage.bank
   Name: Cage
   StudioPath: bank:/Cage
-  lastModified: 639094430988991049
+  lastModified: 639094421854165617
   FileSizes: []
   Exists: 1
 --- !u!114 &-453247217491591656
@@ -508,7 +508,7 @@ MonoBehaviour:
   - {fileID: -7452456630094267476}
   StringsBanks:
   - {fileID: -5802867154023631713}
-  cacheTime: 639094430989496028
+  cacheTime: 639095160914388038
   cacheVersion: 131635
 --- !u!114 &338055293587491647
 MonoBehaviour:
@@ -681,7 +681,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639094430988745149
+  lastModified: 639094421853380313
   FileSizes: []
   Exists: 1
 --- !u!114 &5702278749404225624
@@ -728,7 +728,7 @@ MonoBehaviour:
   Path: Assets/FmodBanks/Desktop/Minigames.bank
   Name: Minigames
   StudioPath: bank:/Minigames
-  lastModified: 639094430989195985
+  lastModified: 639095160914388038
   FileSizes: []
   Exists: 1
 --- !u!114 &5874478624891464934

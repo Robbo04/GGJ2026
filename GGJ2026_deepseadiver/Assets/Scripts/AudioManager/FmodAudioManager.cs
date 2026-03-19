@@ -10,13 +10,25 @@ public class FmodAudioManager : MonoBehaviour
 
   public FMOD.Studio.EventInstance areaEventInstance;
 
-  [SerializeField] private GameObject QTEManager;
-
   public EventReference example;
+
+    [SerializeField] public FMOD.Studio.EventInstance buttonSound;
+    [SerializeField] public FMOD.Studio.EventInstance showLetterSound;
+    [SerializeField] public FMOD.Studio.EventInstance moveCrainSound;
+    [SerializeField] public FMOD.Studio.EventInstance completeSound;
+
+    [SerializeField] public FMOD.Studio.EventInstance leverSound;
 
 
     private void Awake()
     {
+        buttonSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Button");
+        showLetterSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/showLetters");
+        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageDownFixed");
+        completeSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Correct");
+        leverSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/lever");
+
+
         if (Instance != null)
         {
            Debug.LogError("Multiple instances of FmodAudioManager detected!");

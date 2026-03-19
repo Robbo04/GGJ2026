@@ -10,6 +10,7 @@ using FMODUnity;
 public class KeySelector : MonoBehaviour
 {
     [SerializeField] public GameObject imageRef;
+    [SerializeField] public GameObject AudioManager;
     string c;
     int score = 0;
     public int maxScore = 1;
@@ -21,9 +22,6 @@ public class KeySelector : MonoBehaviour
     bool waitingForInput = false;
 
     [SerializeField] public GameObject player;
-    [SerializeField] public FMOD.Studio.EventInstance  buttonSound;
-    [SerializeField] public FMOD.Studio.EventInstance  showLetterSound;
-    [SerializeField] public FMOD.Studio.EventInstance moveCrainSound;
 
     public TextMeshProUGUI textref;
 
@@ -65,10 +63,6 @@ public class KeySelector : MonoBehaviour
         charToSprite.Add('X', spriteX);
         charToSprite.Add('Y', spriteY);
         charToSprite.Add('Z', spriteZ);
-
-        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageDownFixed");
-        buttonSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Button");
-        showLetterSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/showLetters");
         
         // Hide the image initially
         imageRef.GetComponent<Image>().enabled = false;
@@ -115,7 +109,7 @@ public class KeySelector : MonoBehaviour
                 
                 imageRef.GetComponent<Image>().sprite = charToSprite[c[0]];
                 textref.text = "Count: " + (round + 1).ToString();
-                FmodAudioManager.Instance.PlayOneShot(showLetterSound, transform.position);
+                FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().showLetterSound, transform.position);
             }
             
             yield return new WaitForSeconds(targetTime);
@@ -141,7 +135,7 @@ public class KeySelector : MonoBehaviour
                     {
                         pressedString += pressedChar;
                         Debug.Log($"Player pressed: {pressedChar} | Input so far: {pressedString}");
-                        FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
+                        FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().buttonSound, transform.position);
                         // Display the pressed image
                         if (charToSprite.ContainsKey(pressedChar))
                         {
@@ -158,7 +152,7 @@ public class KeySelector : MonoBehaviour
                                 
                                 // Complete correct sequence!
                                 Debug.Log("Perfect! You completed the sequence!");
-                                FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
+                                FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().buttonSound, transform.position);
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;
@@ -176,7 +170,7 @@ public class KeySelector : MonoBehaviour
                                     // Hide image when game is completed
                                     imageRef.GetComponent<Image>().enabled = false;
                                     player.GetComponent<SplineMovementManager>().MoveToNextKnot();     
-                                    FmodAudioManager.Instance.PlayOneShot(moveCrainSound, this.transform.position);                        }
+                                    FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().moveCrainSound, this.transform.position);                        }
                             }
                         }
                         else

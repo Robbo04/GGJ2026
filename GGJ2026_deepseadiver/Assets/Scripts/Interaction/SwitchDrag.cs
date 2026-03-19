@@ -8,16 +8,14 @@ using FMODUnity;
 public class SwitchDrag : Interactable
 {
     [SerializeField] public GameObject player;
+    [SerializeField] public GameObject AudioManager;
     [Header("Lever Settings")]
     public Transform leverRoot;          // The parent object to rotate (leave empty to use parent)
     public CameraScript cameraScript;    // Reference to camera to lock during drag
     public float minAngle = 0f;          // Lever up position
     public float maxAngle = 45f;         // Lever down position (on)
     public float dragSensitivity = 0.5f; // How much drag affects rotation
-    public float onThreshold = 40f;      // Angle at which lever is considered "on"
-
-    [SerializeField] private FMOD.Studio.EventInstance leverSound;
-    [SerializeField] private FMOD.Studio.EventInstance moveCrainSound;
+    public float onThreshold = 40f;      // Angle at which lever is considered "on" 
     
     
     private PlayerInputActions playerControls;
@@ -42,9 +40,6 @@ public class SwitchDrag : Interactable
         playerControls.PlayerController.Look.performed += OnLook;
         playerControls.PlayerController.Look.canceled += OnLook;
         playerControls.PlayerController.Interact.canceled += OnInteractCanceled;
-
-        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageDownFixed");
-        leverSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/lever");
     }
     
     void OnDestroy()
@@ -62,7 +57,7 @@ public class SwitchDrag : Interactable
     new public void Interact()
     {
         isDragging = true;
-        FmodAudioManager.Instance.PlayOneShot(leverSound, transform.position);
+        FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().leverSound, transform.position);
         // Lock camera while dragging
         if (cameraScript != null)
         {
@@ -132,7 +127,7 @@ public class SwitchDrag : Interactable
         // Lever has been pulled down (toggled on)
         Debug.Log("Lever pulled down!");
         player.GetComponent<SplineMovementManager>().MoveToNextKnot(); 
-        FmodAudioManager.Instance.PlayOneShot(moveCrainSound, transform.position);
+        FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().moveCrainSound, transform.position);
         
     }
 }

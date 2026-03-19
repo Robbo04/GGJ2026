@@ -430,7 +430,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 24901947332202754, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_Name
-      value: LabeledParameterTrigger (1)
+      value: CraneParameterTrigger (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalScale.x
@@ -438,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1734396
+      value: 13.52624
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalScale.z
@@ -450,11 +450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.16
+      value: 8.36
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.21
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -982,6 +982,10 @@ PrefabInstance:
       propertyPath: maxScore
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
+      propertyPath: AudioManager
+      value: 
+      objectReference: {fileID: 55992795}
     - target: {fileID: 3328378748210598914, guid: 331a0fc65015fe447bf778608491d6d5, type: 3}
       propertyPath: buttonSound.Path
       value: event:/Minigame Oneshots/Button
@@ -4678,6 +4682,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2118950807}
     - target: {fileID: 889972078570738935, guid: 55772861d46bf499db02fb88d679daed, type: 3}
+      propertyPath: AudioManager
+      value: 
+      objectReference: {fileID: 55992795}
+    - target: {fileID: 889972078570738935, guid: 55772861d46bf499db02fb88d679daed, type: 3}
       propertyPath: buttonSound.Path
       value: event:/Minigame Oneshots/Button
       objectReference: {fileID: 0}
@@ -4745,6 +4753,10 @@ PrefabInstance:
       propertyPath: leverRoot
       value: 
       objectReference: {fileID: 1854232495}
+    - target: {fileID: 7798558718967087210, guid: 55772861d46bf499db02fb88d679daed, type: 3}
+      propertyPath: AudioManager
+      value: 
+      objectReference: {fileID: 55992795}
     - target: {fileID: 7798558718967087210, guid: 55772861d46bf499db02fb88d679daed, type: 3}
       propertyPath: cameraScript
       value: 
@@ -5027,7 +5039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 24901947332202754, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_Name
-      value: LabeledParameterTrigger
+      value: CraneParameterTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalScale.x
@@ -5035,7 +5047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1734396
+      value: 13.526236
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalScale.z
@@ -5047,7 +5059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 73.55
+      value: 66.4
       objectReference: {fileID: 0}
     - target: {fileID: 3153526557958696965, guid: ec9470bb2790d0144b69c0c6053d24d7, type: 3}
       propertyPath: m_LocalPosition.z

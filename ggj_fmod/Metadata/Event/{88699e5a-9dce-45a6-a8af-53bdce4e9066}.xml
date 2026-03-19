@@ -5,7 +5,7 @@
 			<value>Cracking</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{fc0bf9a1-7a17-4ca1-ace0-deca38405ff2}</destination>
@@ -123,6 +123,7 @@
 	<object class="MixerBusEffectChain" id="{865a3d5e-8c51-453e-b4e3-3230bf31dc4b}">
 		<relationship name="effects">
 			<destination>{0b0f3a95-66e3-4115-9634-58288394016e}</destination>
+			<destination>{76a08f2b-4d25-4703-8eb6-5633e809af4a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d577040f-98b2-4da2-82c8-0c7ae7347de7}" />
@@ -162,6 +163,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{64ceff68-58f4-40af-a176-559672d8f8cc}" />
 	<object class="MixerBusFader" id="{0b0f3a95-66e3-4115-9634-58288394016e}" />
+	<object class="SpatialiserEffect" id="{76a08f2b-4d25-4703-8eb6-5633e809af4a}">
+		<property name="maximumDistance">
+			<value>3.60000014</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{859dfaca-b4d5-4060-a8ac-ef8570801aa6}">
 		<property name="position">
 			<value>1</value>
@@ -187,7 +196,7 @@
 			<value>26</value>
 		</property>
 		<property name="mix">
-			<value>16</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="MultibandEqEffect" id="{7e095dc3-81f6-434d-bde2-8893f3ac1893}">
@@ -198,16 +207,16 @@
 			<value>3</value>
 		</property>
 		<property name="frequencyA">
-			<value>121.303589</value>
+			<value>250.50174</value>
 		</property>
 		<property name="frequencyB">
-			<value>2396.7063</value>
+			<value>3940.68457</value>
 		</property>
 		<property name="qualityA">
-			<value>0.730814755</value>
+			<value>0.775642395</value>
 		</property>
 		<property name="qualityB">
-			<value>1.08943677</value>
+			<value>0.775642395</value>
 		</property>
 	</object>
 </objects>

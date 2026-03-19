@@ -7,7 +7,6 @@ public class AreaChangeTrigger : MonoBehaviour
     [Header ("parameter change")]
 
     [SerializeField] private Looping loop;
-    [SerializeField] public GameObject QTEManager;
     [SerializeField] public GameObject AudioManager;
     private FMOD.Studio.EventInstance instance;
 
@@ -16,9 +15,16 @@ public class AreaChangeTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {   
-            AudioManager.GetComponent<FmodAudioManager>().EventInstance = QTEManager.GetComponent<KeySelector>().moveCrainSound;
+            AudioManager.GetComponent<FmodAudioManager>().EventInstance = AudioManager.GetComponent<FmodAudioManager>().moveCrainSound;
             instance = AudioManager.GetComponent<FmodAudioManager>().EventInstance;
             FmodAudioManager.Instance.SetAmbienceParameter("SetLooping", loop);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            FmodAudioManager.Instance.SetAmbienceParameter("SetLooping", loop - 1);
         }
     }
  

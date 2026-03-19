@@ -8,8 +8,7 @@ public class SequencerManager : MonoBehaviour
     
 
     [SerializeField] GameObject[] buttons;
-    [SerializeField] private FMOD.Studio.EventInstance buttonSound;
-    [SerializeField] private FMOD.Studio.EventInstance completeSound;
+    [SerializeField] GameObject AudioManager;
     public GameObject leverCover;
     public int correctButtons;
 
@@ -17,22 +16,20 @@ public class SequencerManager : MonoBehaviour
     {
         correctButtons = 0;
         //print(buttons.Length);
-        buttonSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Button");
-        completeSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Correct");
     }
 
     // Update is called once per frame
     public void UpdateButtons()
     {
         correctButtons = 0;
-        
+
         foreach (GameObject button in buttons)
         {
             if (button.GetComponent<ButtonToggle>().isOn)
             {
                 correctButtons++;
                 print("button pressed");
-                FmodAudioManager.Instance.PlayOneShot(buttonSound, transform.position);
+                AudioManager.GetComponent<FmodAudioManager>().PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().buttonSound, transform.position);
             }
         }
         print(correctButtons);
@@ -43,7 +40,7 @@ public class SequencerManager : MonoBehaviour
             // Enable all assigned scripts
             lever.GetComponent<Outline>().enabled = true;
             lever.GetComponent<Interactable>().enabled = true;
-            FmodAudioManager.Instance.PlayOneShot(completeSound, transform.position);
+            FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().completeSound, transform.position);
 
         }
 
