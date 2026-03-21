@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class SequencerManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class SequencerManager : MonoBehaviour
     
 
     [SerializeField] GameObject[] buttons;
+    [SerializeField] GameObject AudioManager;
     public GameObject leverCover;
     public int correctButtons;
 
@@ -20,12 +22,14 @@ public class SequencerManager : MonoBehaviour
     public void UpdateButtons()
     {
         correctButtons = 0;
-        
+
         foreach (GameObject button in buttons)
         {
             if (button.GetComponent<ButtonToggle>().isOn)
             {
-                correctButtons++;   
+                correctButtons++;
+                print("button pressed");
+                AudioManager.GetComponent<FmodAudioManager>().PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().buttonSound, transform.position);
             }
         }
         print(correctButtons);
@@ -36,6 +40,8 @@ public class SequencerManager : MonoBehaviour
             // Enable all assigned scripts
             lever.GetComponent<Outline>().enabled = true;
             lever.GetComponent<Interactable>().enabled = true;
+            FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().completeSound, transform.position);
+
         }
 
     }

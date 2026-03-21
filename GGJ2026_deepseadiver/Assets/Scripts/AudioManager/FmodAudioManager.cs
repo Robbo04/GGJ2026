@@ -1,36 +1,64 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using System;
 
 public class FmodAudioManager : MonoBehaviour
 {
   public static FmodAudioManager Instance { get; private set; }
-  public EventInstance ambienceEventInstance;
+  public FMOD.Studio.EventInstance EventInstance;
 
-  public EventInstance areaEventInstance;
+  public FMOD.Studio.EventInstance areaEventInstance;
+
+  public EventReference example;
+
+    [SerializeField] public FMOD.Studio.EventInstance buttonSound;
+    [SerializeField] public FMOD.Studio.EventInstance showLetterSound;
+    [SerializeField] public FMOD.Studio.EventInstance moveCrainSound;
+    [SerializeField] public FMOD.Studio.EventInstance completeSound;
+
+    [SerializeField] public FMOD.Studio.EventInstance leverSound;
 
 
     private void Awake()
     {
+        buttonSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Button");
+        showLetterSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/showLetters");
+        moveCrainSound = RuntimeManager.CreateInstance("event:/Cage Effects/CageDownFixed");
+        completeSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Correct");
+        leverSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/lever");
+
+
         if (Instance != null)
         {
-           Debug.LogError("Multiple instances of FmodAudioManager detected!"); 
+           Debug.LogError("Multiple instances of FmodAudioManager detected!");
         }
         Instance = this;
     }
 
-    public void PlayOneShot(EventReference sound, Vector3 position)
+    public void PlayOneShot(EventInstance sound, Vector3 position)
     {
-        RuntimeManager.PlayOneShot(sound, position);
+        EventInstance instance = sound;
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+        instance.start();
+        instance.release();
     }
 
-    public void SetMusicArea(Area area)
+    public void StopOneShot(EventReference sound)
     {
-        areaEventInstance.setParameterByName("Area", (float) area);
+        
+        var instance = RuntimeManager.CreateInstance(sound);
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        instance.release();
     }
 
-    public void SetAmbienceParameter(string paramName, float value)
+    public void SetWaterArea(string paramName, Area area)
     {
-        ambienceEventInstance.setParameterByName(paramName, value);
+        areaEventInstance.setParameterByName(paramName, (float) area);
+    }
+
+    public void SetAmbienceParameter(string paramName, Looping loop)
+    {
+        EventInstance.setParameterByName(paramName, (float) loop, false);
     }
 }

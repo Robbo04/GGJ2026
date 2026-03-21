@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4917562274855016915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4735742704740820460}
+  - component: {fileID: 3328378748210598914}
+  m_Layer: 0
+  m_Name: QTEManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4735742704740820460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917562274855016915}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.31429, y: 0.22, z: 0.31429}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3328378748210598914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917562274855016915}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c70496431941d41aeda46a2a685a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeySelector
+  imageRef: {fileID: 0}
+  targetTime: 2
+  player: {fileID: 0}
+  correctSound:
+    Guid:
+      Data1: -106085263
+      Data2: 1335854372
+      Data3: -566285906
+      Data4: 949635410
+    Path: event:/Minigame Oneshots/Button
+  moveCrainSound:
+    Guid:
+      Data1: 2040513894
+      Data2: 1252480233
+      Data3: -1883920987
+      Data4: 661592213
+    Path: event:/Cage Effects/CageUp
+  textref: {fileID: 0}
+  spriteA: {fileID: 1484927586, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteB: {fileID: 1478267385, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteC: {fileID: 1350215795, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteD: {fileID: -590488895, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteE: {fileID: -459770952, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteF: {fileID: 1156960744, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteG: {fileID: 625073968, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteH: {fileID: 1059508120, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteI: {fileID: 868743213, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteJ: {fileID: -1313073244, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteK: {fileID: 1750651341, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteL: {fileID: -597949276, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteM: {fileID: -2109318871, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteN: {fileID: 180122565, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteO: {fileID: -918470373, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteP: {fileID: -63396823, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteQ: {fileID: -1297854207, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteR: {fileID: 2120047593, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteS: {fileID: -2089436856, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteT: {fileID: -1599400198, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteU: {fileID: -587708297, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteV: {fileID: -699803448, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteW: {fileID: -1369767975, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteX: {fileID: -1016494793, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteY: {fileID: -508680404, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}
+  spriteZ: {fileID: 1219097758, guid: 28843a1617979c24c8d4f83cacce984e, type: 3}

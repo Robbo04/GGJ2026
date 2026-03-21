@@ -2,17 +2,20 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using FMOD.Studio;
+using FMODUnity;
 
 public class SwitchDrag : Interactable
 {
     [SerializeField] public GameObject player;
+    [SerializeField] public GameObject AudioManager;
     [Header("Lever Settings")]
     public Transform leverRoot;          // The parent object to rotate (leave empty to use parent)
     public CameraScript cameraScript;    // Reference to camera to lock during drag
     public float minAngle = 0f;          // Lever up position
     public float maxAngle = 45f;         // Lever down position (on)
     public float dragSensitivity = 0.5f; // How much drag affects rotation
-    public float onThreshold = 40f;      // Angle at which lever is considered "on"
+    public float onThreshold = 40f;      // Angle at which lever is considered "on" 
     
     
     private PlayerInputActions playerControls;
@@ -54,7 +57,7 @@ public class SwitchDrag : Interactable
     new public void Interact()
     {
         isDragging = true;
-        
+        FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().leverSound, transform.position);
         // Lock camera while dragging
         if (cameraScript != null)
         {
@@ -72,6 +75,7 @@ public class SwitchDrag : Interactable
         if (cameraScript != null)
         {
             cameraScript.enabled = true;
+            //FmodAudioManager.Instance.StopOneShot(leverSound);
         }
     }
     
@@ -123,6 +127,7 @@ public class SwitchDrag : Interactable
         // Lever has been pulled down (toggled on)
         Debug.Log("Lever pulled down!");
         player.GetComponent<SplineMovementManager>().MoveToNextKnot(); 
+        FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().moveCrainSound, transform.position);
         
     }
 }

@@ -4,26 +4,24 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.Splines;
 using TMPro;
 using FMODUnity;
 
 public class KeySelector : MonoBehaviour
 {
     [SerializeField] public GameObject imageRef;
+    [SerializeField] public GameObject AudioManager;
     string c;
     int score = 0;
-    int maxScore = 1;
+    public int maxScore = 1;
 
-    public float targetTime = 2.0f;
+    public float targetTime = 1.0f;
     private bool isListenerRegistered = false;
     string pressedString = "";
     string sequenceToRepeat = "";
     bool waitingForInput = false;
 
     [SerializeField] public GameObject player;
-    [SerializeField] private EventReference correctSound;
-    [SerializeField] private EventReference moveCrainSound;
 
     public TextMeshProUGUI textref;
 
@@ -111,6 +109,7 @@ public class KeySelector : MonoBehaviour
                 
                 imageRef.GetComponent<Image>().sprite = charToSprite[c[0]];
                 textref.text = "Count: " + (round + 1).ToString();
+                FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().showLetterSound, transform.position);
             }
             
             yield return new WaitForSeconds(targetTime);
@@ -136,7 +135,7 @@ public class KeySelector : MonoBehaviour
                     {
                         pressedString += pressedChar;
                         Debug.Log($"Player pressed: {pressedChar} | Input so far: {pressedString}");
-                        
+                        FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().buttonSound, transform.position);
                         // Display the pressed image
                         if (charToSprite.ContainsKey(pressedChar))
                         {
@@ -153,7 +152,7 @@ public class KeySelector : MonoBehaviour
                                 
                                 // Complete correct sequence!
                                 Debug.Log("Perfect! You completed the sequence!");
-                                //FmodAudioManager.Instance.PlayOneShot(correctSound, this.transform.position);
+                                FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().buttonSound, transform.position);
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;
@@ -170,7 +169,8 @@ public class KeySelector : MonoBehaviour
                                     Debug.Log("All rounds complete! You won!");
                                     // Hide image when game is completed
                                     imageRef.GetComponent<Image>().enabled = false;
-                                    player.GetComponent<SplineMovementManager>().MoveToNextKnot();                              }
+                                    player.GetComponent<SplineMovementManager>().MoveToNextKnot();     
+                                    FmodAudioManager.Instance.PlayOneShot(AudioManager.GetComponent<FmodAudioManager>().moveCrainSound, this.transform.position);                        }
                             }
                         }
                         else

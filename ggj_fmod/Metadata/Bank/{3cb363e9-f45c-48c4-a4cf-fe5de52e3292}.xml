@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{3cb363e9-f45c-48c4-a4cf-fe5de52e3292}">
+		<property name="name">
+			<value>Minigames</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7251e46c-45b8-470d-8517-4bab5442ead8}</destination>
+		</relationship>
+	</object>
+</objects>
