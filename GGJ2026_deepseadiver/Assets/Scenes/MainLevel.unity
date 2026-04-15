@@ -973,6 +973,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crack
   isCracked: 0
+  Windows: []
+  Health: 2
 --- !u!1001 &207776463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1593,6 +1595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crack
   isCracked: 0
+  Windows: []
+  Health: 2
 --- !u!4 &412959289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f8145dbb3c8a2f49a0d5a9b0157b975, type: 3}
@@ -3662,6 +3666,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crack
   isCracked: 0
+  Windows: []
+  Health: 2
 --- !u!4 &1123089768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f8145dbb3c8a2f49a0d5a9b0157b975, type: 3}
@@ -5659,6 +5665,9 @@ MonoBehaviour:
   - {fileID: 379341064}
   - {fileID: 132120193}
   - {fileID: 1114939449}
+  DefaultWindowMat: {fileID: 0}
+  MildCrackedWindowMat: {fileID: 0}
+  HeavyCrackedWindowMat: {fileID: 0}
 --- !u!1001 &2024733427
 PrefabInstance:
   m_ObjectHideFlags: 0
