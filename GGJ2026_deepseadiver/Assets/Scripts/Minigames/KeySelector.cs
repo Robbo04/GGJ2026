@@ -156,8 +156,6 @@ public class KeySelector : MonoBehaviour
                                 score++;
                                 waitingForInput = false;
                                 targetTime = targetTime / 2;
-                                new WaitForSeconds(2.0f);
-
                                 
                                 if (score < maxScore)
                                 {

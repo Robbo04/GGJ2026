@@ -8,34 +8,37 @@ public class Crack : MonoBehaviour
     
     public void RemoveCracked()
     {
-        if(!isCracked)
-        {
-            Health = 2;
-            print("Crack removed");
-            GetComponent<Renderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
-        }
+        // Reset the crack state regardless of current isCracked status
+        isCracked = false;
+        Health = 2;
+        Debug.Log($"Crack removed from: {gameObject.name}");
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 
     public void AddCracked()
     {
-        if (!isCracked)
+        // Don't add more cracks if already fully broken
+        if (isCracked)
         {
-            Health =- 1;
-            if (Health == 0)
-            {
-                DestroyWindow();
-            }
-            else
-            {
-                print("Crack added");
-                // Add crack logic
-                GetComponent<Renderer>().enabled = true;
-                GetComponent<Collider>().enabled = true;
-                //FMOD Crack sound play Front Side
-            }
-            
-           
+            Debug.Log("Window already fully cracked, ignoring AddCracked");
+            return;
+        }
+        
+        Health -= 1;  // Fixed: was "Health =- 1" which assigns -1 instead of subtracting
+        Debug.Log($"Window damaged. Health now: {Health}");
+        
+        if (Health <= 0)  // Also changed to <= for safety
+        {
+            DestroyWindow();
+        }
+        else
+        {
+            print("Crack added");
+            // Add crack logic
+            GetComponent<Renderer>().enabled = true;
+            GetComponent<Collider>().enabled = true;
+            //FMOD Crack sound play Front Side
         }
     }
 
@@ -44,6 +47,7 @@ public class Crack : MonoBehaviour
         isCracked = true;
         GetComponent<Renderer>().enabled = true;
         GetComponent<Collider>().enabled = false;
+        Debug.Log($"Window fully destroyed: {gameObject.name}");
         //audio break
         //visual cue here
     }

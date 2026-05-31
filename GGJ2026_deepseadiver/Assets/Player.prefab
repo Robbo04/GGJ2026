@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraScript
   mouseSensitivity: 100
   playerBody: {fileID: 8965859276661750894}
+  playerHelmet: {fileID: 0}
 --- !u!1 &6971627424018299644
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cage Model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 725cefde4159d6c45b8079e16fe3b008, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -578,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 65e67d1632cbb434685636be0c08c3a1, type: 3}
       propertyPath: m_Name
       value: Panel Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65e67d1632cbb434685636be0c08c3a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

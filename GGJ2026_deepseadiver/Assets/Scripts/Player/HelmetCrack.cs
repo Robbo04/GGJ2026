@@ -20,6 +20,7 @@ public class HelmetCrack : MonoBehaviour
     [SerializeField] public FMOD.Studio.EventInstance crackSound; //FMOD event for crack sound.
     int crackCount;
     float elapsedTime;
+    private Crack[] crackComponents; // Cache crack components
 
     //public Texture[] texture;
 
@@ -27,15 +28,25 @@ public class HelmetCrack : MonoBehaviour
     {
         //reset crack counter to 0
         crackCount = 0;
+        
+        // Cache all Crack components at start
+        crackComponents = new Crack[CrackedWindow.Length];
+        for (int i = 0; i < CrackedWindow.Length; i++)
+        {
+            crackComponents[i] = CrackedWindow[i].GetComponent<Crack>();
+        }
     }
 
     void FixedUpdate()
     {
+        // Update crack count at the start of FixedUpdate to avoid race conditions
+        UpdateCrackCount();
+        
         //if all the windows have broken
         if(crackCount < 3)
         {
-        //increasing the timer with delta time
-        elapsedTime += Time.deltaTime;
+        //increasing the timer with fixed delta time (correct for FixedUpdate)
+        elapsedTime += Time.fixedDeltaTime;
         //if the timer exceeds 5 seconds
         if (elapsedTime > 5)
             {
@@ -44,26 +55,56 @@ public class HelmetCrack : MonoBehaviour
                 print ("RandomNumber " + randomNumber);
                 if (randomNumber == 2) //when SRAND is equal to 2 proceed to crack a window
                 {
-                    int randomCrack; //initialise SRAND variable
-                    do //find a random window that is not cracked
+                    // Count how many windows are not cracked (use cached components)
+                    int availableWindows = 0;
+                    for (int i = 0; i < crackComponents.Length; i++)
                     {
-                        randomCrack = Random.Range(0, CrackedWindow.Length); //SRAND find random window in gameobject list
-                        print("RandomCrack " + randomCrack);
-                    } while (CrackedWindow[randomCrack].GetComponent<Crack>().isCracked); //checks to see if window found is cracked
-                    //window is found, now do this
-                    CrackedWindow[randomCrack].GetComponent<Crack>().AddCracked(); //trigger add cracked function
-                    //Trigger FMOD functionality.
-                    crackSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Cracking"); 
-                    FmodAudioManager.Instance.PlayOneShot(crackSound, transform.position); 
-                    Debug.Log("crackedSound");
+                        if (crackComponents[i] != null && !crackComponents[i].isCracked)
+                        {
+                            availableWindows++;
+                        }
+                    }
                     
-                    switch (CrackedWindow[randomCrack].GetComponent<Crack>().Health)    {
-                        case 0: //Set window to be cracked material Default:
-                        break;
-                        case 1: //Set window to be cracked material light crack:
-                        break;
-                        case 2: //Set window to be cracked material heavy:
-                        break;
+                    // Safety check - if no windows available, skip this frame
+                    if (availableWindows == 0)
+                    {
+                        elapsedTime = 0;
+                        return;
+                    }
+                    
+                    int randomCrack = -1; //initialise SRAND variable
+                    int attempts = 0; //prevent infinite loop
+                    
+                    // Find a random non-cracked window
+                    do
+                    {
+                        randomCrack = Random.Range(0, crackComponents.Length);
+                        print("RandomCrack " + randomCrack);
+                        attempts++;
+                        if (attempts > 100) // Emergency break
+                        {
+                            Debug.LogError("Failed to find available window after 100 attempts!");
+                            elapsedTime = 0;
+                            return;
+                        }
+                    } while (crackComponents[randomCrack] == null || crackComponents[randomCrack].isCracked);
+                    //window is found, now do this
+                    if (crackComponents[randomCrack] != null) // Final safety check
+                    {
+                        crackComponents[randomCrack].AddCracked(); //trigger add cracked function
+                        //Trigger FMOD functionality.
+                        crackSound = RuntimeManager.CreateInstance("event:/Minigame Oneshots/Cracking"); 
+                        FmodAudioManager.Instance.PlayOneShot(crackSound, transform.position); 
+                        Debug.Log("crackedSound");
+                        
+                        switch (crackComponents[randomCrack].Health)    {
+                            case 0: //Set window to be cracked material Default:
+                            break;
+                            case 1: //Set window to be cracked material light crack:
+                            break;
+                            case 2: //Set window to be cracked material heavy:
+                            break;
+                        }
                     }
                 }
                 elapsedTime = 0;
@@ -75,19 +116,33 @@ public class HelmetCrack : MonoBehaviour
 
     void Update()
     {
-        // Check how many cracks are currently active
-        crackCount = 0;
-        foreach (GameObject a in CrackedWindow)
-        {
-            if (a.GetComponent<Crack>().isCracked)
-            {
-                crackCount++;
-            }
-        }
-        if (crackCount == 3)
+        // Just check for game over in Update
+        if (crackCount >= 3)
         {
             print("Game over logic");
             SceneManager.LoadScene("MainLevel");
+        }
+    }
+    
+    void UpdateCrackCount()
+    {
+        if (crackComponents == null) return; // Safety check
+        
+        // Check how many cracks are currently active (use cached components)
+        int newCrackCount = 0;
+        for (int i = 0; i < crackComponents.Length; i++)
+        {
+            if (crackComponents[i] != null && crackComponents[i].isCracked)
+            {
+                newCrackCount++;
+            }
+        }
+        
+        // Only update if count changed (prevents unnecessary logs)
+        if (newCrackCount != crackCount)
+        {
+            crackCount = newCrackCount;
+            Debug.Log($"Crack count updated to: {crackCount}");
         }
     }
 

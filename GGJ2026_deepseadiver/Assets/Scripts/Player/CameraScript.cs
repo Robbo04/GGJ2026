@@ -9,6 +9,7 @@ public class CameraScript : MonoBehaviour
     public Transform playerHelmet;
     private bool isCameraLock = false;
     private bool currentlyLocked = false;
+    private bool isReturningToCenter = false;
 
     //look input rotation floats
     float xRotation = 0f;
@@ -86,7 +87,7 @@ public class CameraScript : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         yRotation -= mouseY;
-        yRotation = Mathf.Clamp(yRotation, -40f, 40f);
+        yRotation = Mathf.Clamp(yRotation, -80f, 40f);
 
         if (isCameraLock)
         {
@@ -95,83 +96,44 @@ public class CameraScript : MonoBehaviour
             transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
             //x rotation
             currentlyLocked = true;
+            isReturningToCenter = false; // Reset return flag while actively locked
         }
         else
         {
             //if player is not holding control
             if (currentlyLocked)
             {
-                currentXRotation = transform.localRotation.x;
-                currentYRotation = transform.localRotation.y;
-                while (currentXRotation != 0f || currentYRotation != 0f)
+                // First frame after releasing lock - capture current rotation
+                if (!isReturningToCenter)
                 {
-                    //Top Right 
-                    if (currentXRotation > 0f && currentYRotation > 0f)
-                    {
-                        
-                        currentXRotation = currentXRotation - 10;
-                        currentYRotation = currentYRotation - 10;
-
-                        if (currentXRotation < 0f)
-                        {
-                            currentXRotation = 0f;
-                        }
-                        else if (currentYRotation < 0f)
-                        {
-                            currentYRotation = 0f;
-                        }
-                    }
-                    //Bottom Left
-                    else if (currentXRotation < 0f && currentXRotation < 0f)
-                    {
-                        currentXRotation = currentXRotation + 10;
-                        currentYRotation = currentYRotation + 10;
-
-                        if (currentXRotation > 0f)
-                        {
-                            currentXRotation = 0f;
-                        }
-                        else if (currentYRotation > 0f)
-                        {
-                            currentYRotation = 0f;
-                        }
-                    }
-                    //Top Left
-                    else if (currentXRotation > 0f && currentYRotation < 0f)
-                    {
-                        currentXRotation = currentXRotation - 10;
-                        currentYRotation = currentYRotation + 10;
-
-                        if (currentXRotation < 0f)
-                        {
-                            currentXRotation = 0f;
-                        }
-                        else if (currentYRotation > 0f)
-                        {
-                            currentYRotation = 0f;
-                        }
-                    }
-                    //Bottom Right
-                    else if (currentXRotation < 0f && currentYRotation > 0f)
-                    {
-                        currentXRotation = currentXRotation + 10;
-                        currentYRotation = currentYRotation - 10;
-
-                        if (currentXRotation > 0f)
-                        {
-                            currentXRotation = 0f;
-                        }
-                        else if (currentYRotation < 0f)
-                        {
-                            currentYRotation = 0f;
-                        }
-                    }
-                    if (currentXRotation == 0f && currentYRotation == 0f)
-                    {
-                        print("break");
-                    }
+                    Vector3 currentEuler = transform.localRotation.eulerAngles;
+                    currentXRotation = currentEuler.y;
+                    currentYRotation = currentEuler.x;
+                    // Normalize angles to -180 to 180 range
+                    if (currentXRotation > 180f) currentXRotation -= 360f;
+                    if (currentYRotation > 180f) currentYRotation -= 360f;
+                    isReturningToCenter = true;
                 }
-                currentlyLocked = false;
+                
+                // Smoothly interpolate camera back to center over multiple frames
+                float returnSpeed = 200f * Time.deltaTime; // Adjust speed as needed
+                
+                currentXRotation = Mathf.MoveTowards(currentXRotation, 0f, returnSpeed);
+                currentYRotation = Mathf.MoveTowards(currentYRotation, 0f, returnSpeed);
+                
+                // Apply the interpolated rotation
+                transform.localRotation = Quaternion.Euler(currentYRotation, currentXRotation, 0f);
+                
+                // Check if we're close enough to center to consider it done
+                if (Mathf.Abs(currentXRotation) < 0.1f && Mathf.Abs(currentYRotation) < 0.1f)
+                {
+                    currentXRotation = 0f;
+                    currentYRotation = 0f;
+                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                    currentlyLocked = false;
+                    isReturningToCenter = false;
+                    print("Camera returned to center");
+                }
             }
             else
             {
