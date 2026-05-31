@@ -97,13 +97,22 @@ public class HelmetCrack : MonoBehaviour
                         FmodAudioManager.Instance.PlayOneShot(crackSound, transform.position); 
                         Debug.Log("crackedSound");
                         
-                        switch (crackComponents[randomCrack].Health)    {
-                            case 0: //Set window to be cracked material Default:
-                            break;
-                            case 1: //Set window to be cracked material light crack:
-                            break;
-                            case 2: //Set window to be cracked material heavy:
-                            break;
+                        // Apply material to the WINDOW (parent), not the Crack overlay
+                        Renderer windowRenderer = CrackedWindow[randomCrack].GetComponent<Renderer>();
+                        if (windowRenderer != null)
+                        {
+                            switch (crackComponents[randomCrack].Health)
+                            {
+                                case 0: //Fully broken - heavy crack material
+                                    windowRenderer.material = HeavyCrackedWindowMat;
+                                    break;
+                                case 1: //Damaged - mild crack material
+                                    windowRenderer.material = MildCrackedWindowMat;
+                                    break;
+                                case 2: //Healthy - default material
+                                    windowRenderer.material = DefaultWindowMat;
+                                    break;
+                            }
                         }
                     }
                 }

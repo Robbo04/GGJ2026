@@ -23,16 +23,11 @@ Shader "Custom/Outline Fill" {
 
     Pass {
       Name "Fill"
-      Cull Off
-      ZTest [_ZTest]
+      Cull Front
+      ZTest LessEqual
       ZWrite Off
       Blend SrcAlpha OneMinusSrcAlpha
       ColorMask RGB
-
-      Stencil {
-        Ref 1
-        Comp NotEqual
-      }
 
       CGPROGRAM
       #include "UnityCG.cginc"

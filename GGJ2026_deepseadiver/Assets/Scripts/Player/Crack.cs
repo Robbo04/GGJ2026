@@ -3,7 +3,6 @@ using UnityEngine;
 public class Crack : MonoBehaviour
 {
     public bool isCracked = false; // Flag to track if the helmet is cracked
-    public GameObject[] Windows;
     public int Health = 2;
     
     public void RemoveCracked()
@@ -12,8 +11,18 @@ public class Crack : MonoBehaviour
         isCracked = false;
         Health = 2;
         Debug.Log($"Crack removed from: {gameObject.name}");
-        GetComponent<Renderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
+        
+        // Reset this window's material to default
+        HelmetCrack helmetCrack = FindObjectOfType<HelmetCrack>();
+        if (helmetCrack != null)
+        {
+            Renderer windowRenderer = GetComponent<Renderer>();
+            if (windowRenderer != null)
+            {
+                windowRenderer.sharedMaterial = helmetCrack.DefaultWindowMat;
+            }
+        }
     }
 
     public void AddCracked()
@@ -27,7 +36,7 @@ public class Crack : MonoBehaviour
         
         Health -= 1;  // Fixed: was "Health =- 1" which assigns -1 instead of subtracting
         Debug.Log($"Window damaged. Health now: {Health}");
-        
+        //
         if (Health <= 0)  // Also changed to <= for safety
         {
             DestroyWindow();
@@ -36,16 +45,15 @@ public class Crack : MonoBehaviour
         {
             print("Crack added");
             // Add crack logic
-            GetComponent<Renderer>().enabled = true;
             GetComponent<Collider>().enabled = true;
             //FMOD Crack sound play Front Side
         }
     }
+        
 
     public void DestroyWindow()
     {
         isCracked = true;
-        GetComponent<Renderer>().enabled = true;
         GetComponent<Collider>().enabled = false;
         Debug.Log($"Window fully destroyed: {gameObject.name}");
         //audio break
