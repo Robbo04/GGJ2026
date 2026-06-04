@@ -919,7 +919,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 545e072a024481a4296f30e093b44ff2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -992,6 +992,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  QTEManager: {fileID: 0}
 --- !u!114 &1575320026615481274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,11 +1009,13 @@ MonoBehaviour:
   interactEvent:
     m_PersistentCalls:
       m_Calls: []
+  QTEManager: {fileID: 0}
   completeActors:
   - {fileID: 1299327799183595649}
   - {fileID: 1751119999186628544}
   - {fileID: 461677240997769980}
   completedMaterial: {fileID: 2100000, guid: 96dbe2c0a1d354d9cb9b3093c908b84c, type: 2}
+  cineCam: {fileID: 0}
   weldSpline: {fileID: 8666810904981204359}
   knotsToGenerate: 100
   knotCompletionRadius: 0.1
