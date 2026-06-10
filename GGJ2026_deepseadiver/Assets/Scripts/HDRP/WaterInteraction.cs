@@ -16,12 +16,6 @@ public class WaterInteraction : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(playerWaterHeightMarker != null ? playerWaterHeightMarker.transform.position : Vector3.zero, 0.2f);
-    }
-
     // public GameObject hitObject;
     // public Vector3 collision = Vector3.zero;
 

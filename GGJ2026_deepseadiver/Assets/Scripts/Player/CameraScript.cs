@@ -60,7 +60,8 @@ public class CameraScript : MonoBehaviour
         print(isCameraLock);
         if (FreecamContext.performed)
         {
-            isCameraLock = true;          
+            isCameraLock = true;
+            xRotation = 0f;
         }
         else
         {
@@ -132,6 +133,8 @@ public class CameraScript : MonoBehaviour
                     currentXRotation = 0f;
                     currentYRotation = 0f;
                     transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                    xRotation = 0f;
+                    yRotation = 0f;
                     currentlyLocked = false;
                     isReturningToCenter = false;
                     print("Camera returned to center");
