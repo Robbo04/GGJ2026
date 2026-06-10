@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -51,6 +52,7 @@ public class CameraScript : MonoBehaviour
     private void OnLook(InputAction.CallbackContext Lookcontext)
     {
         lookInput = Lookcontext.ReadValue<Vector2>();
+        Debug.Log(lookInput);
     }
 
     private void Freelook(InputAction.CallbackContext FreecamContext)
