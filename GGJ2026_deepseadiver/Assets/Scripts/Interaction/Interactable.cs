@@ -37,7 +37,7 @@ public class Interactable : MonoBehaviour
     {
         if (outline != null)
         {
-            outline.enabled = true;
+          outline.enabled = true;
         }
     }
 

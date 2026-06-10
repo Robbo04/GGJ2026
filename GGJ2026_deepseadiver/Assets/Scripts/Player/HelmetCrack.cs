@@ -98,7 +98,7 @@ public class HelmetCrack : MonoBehaviour
                         Debug.Log("crackedSound");
                         
                         // Apply material to the WINDOW (parent), not the Crack overlay
-                        Renderer windowRenderer = CrackedWindow[randomCrack].GetComponent<Renderer>();
+                        Renderer windowRenderer = CrackedWindow[randomCrack].GetComponentInChildren<Renderer>();
                         if (windowRenderer != null)
                         {
                             switch (crackComponents[randomCrack].Health)
