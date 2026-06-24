@@ -2250,6 +2250,7 @@ GameObject:
   - component: {fileID: 379341070}
   - component: {fileID: 379341071}
   - component: {fileID: 379341072}
+  - component: {fileID: 379341073}
   m_Layer: 10
   m_Name: FrontPlane
   m_TagString: Interactable
@@ -2267,7 +2268,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -0, y: -0.0116, z: 0.36}
-  m_LocalScale: {x: 0.04070245, y: 0.0012243205, z: 0.040969413}
+  m_LocalScale: {x: 0.017317671, y: 0.00052091165, z: 0.017431255}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021512812}
@@ -2298,6 +2299,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7a75e3fc9082bb4498e32d3562ee5aaa, type: 2}
+  - {fileID: 2100000, guid: f3fe71be8a70a7e43b6a3f787d49ab3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2533,6 +2535,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crack
   isCracked: 0
   Health: 2
+--- !u!114 &379341073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379341064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f60fc060671344da7f329e60922221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForceOutlineCull
 --- !u!4 &412959289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f8145dbb3c8a2f49a0d5a9b0157b975, type: 3}
@@ -2633,9 +2647,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 6df74b3dad2560b47bb8b89c902df809, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6df74b3dad2560b47bb8b89c902df809, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 545e072a024481a4296f30e093b44ff2, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 6df74b3dad2560b47bb8b89c902df809, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6df74b3dad2560b47bb8b89c902df809, type: 3}
       propertyPath: m_Name
       value: Beam Main Model
@@ -3759,6 +3781,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 897358782}
     m_Modifications:
+    - target: {fileID: 444653264665898531, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 444653264665898531, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 1f4959719f71b3548adcbec9d314bde1, type: 3}
     - target: {fileID: 738169088886977205, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
       propertyPath: m_LocalScale.x
       value: 55.10334
@@ -3846,6 +3876,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1067710417069533854, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626069174}
+    - targetCorrespondingSourceObject: {fileID: 1067710417069533854, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626069186}
   m_SourcePrefab: {fileID: 100100000, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
 --- !u!1 &822811598
 GameObject:
@@ -6076,6 +6109,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 738169088886977205, guid: 1f011fec167f2ec47abc7a323d9f6b85, type: 3}
   m_PrefabInstance: {fileID: 800189694}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626069186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626069167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f60fc060671344da7f329e60922221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForceOutlineCull
 --- !u!1001 &1666862043
 PrefabInstance:
   m_ObjectHideFlags: 0
