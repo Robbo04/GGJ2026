@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float reachRange = 3f;
+    public float reachRange = 500f;
     Interactable currentInteractable;
     
     private PlayerInputActions playerControls;
