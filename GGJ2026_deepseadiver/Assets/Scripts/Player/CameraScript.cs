@@ -52,7 +52,7 @@ public class CameraScript : MonoBehaviour
     private void OnLook(InputAction.CallbackContext Lookcontext)
     {
         lookInput = Lookcontext.ReadValue<Vector2>();
-        Debug.Log(lookInput);
+        //Debug.Log(lookInput);
     }
 
     private void Freelook(InputAction.CallbackContext FreecamContext)

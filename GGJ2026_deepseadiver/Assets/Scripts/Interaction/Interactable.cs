@@ -10,12 +10,6 @@ public class Interactable : MonoBehaviour
     public string message;
     public UnityEvent interactEvent;
 
-    [SerializeField] public GameObject QTEManager;
-    // [SerializeField]  public GameObject FrontPlane;
-    // [SerializeField] public GameObject LeftPlane;
-    // [SerializeField] public GameObject RightPlane;
-
-
     public void Start()
     {
         outline = GetComponent<Outline>();
@@ -54,10 +48,4 @@ public class Interactable : MonoBehaviour
         Debug.Log("Destroyed ");
     }
 
-    public void StartMinigame()
-    {
-        QTEManager.GetComponent<KeySelector>().enabled = true;
-        DestroyThis();
-        Debug.Log("Minigame Started");
-    }
 }

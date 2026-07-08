@@ -52,7 +52,7 @@ public class HelmetCrack : MonoBehaviour
             {
                 //SRAND if the window should break or not
                 int randomNumber = Random.Range(0,3);
-                print ("RandomNumber " + randomNumber);
+                //print ("RandomNumber " + randomNumber);
                 if (randomNumber == 2) //when SRAND is equal to 2 proceed to crack a window
                 {
                     // Count how many windows are not cracked (use cached components)
